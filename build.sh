@@ -11,6 +11,8 @@ function pandoc_build() {
     local $*
     COHORT="2018-Spring"
     OUT="$MY_PATH/build/cheatsheets"
+    IN="$MY_PATH/cheatsheets"
+    TEMPLATE="$MY_PATH/templates/cheatsheet.latex"
     echo "Building $name..."
     pandoc\
         -f markdown\
