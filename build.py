@@ -167,9 +167,6 @@ def build_table_of_contents():
 
 def main():
     global filter_by
-    if sys.argv[-1] == '_cs': # hack to focus on one as i wokr on styles
-        build_cheatsheets('.pdf')
-        return
 
     if sys.argv[-2] == '--filter':
         filter_by = sys.argv[-1]
@@ -187,11 +184,6 @@ def main():
         build_quizes('.pdf')
         build_cheatsheets('.pdf')
         build_syllabus('.pdf')
-
-    # have to build TOC last because of hacky side-effects of building the
-    # other stuff
-    #if sys.argv[-1] in ('print', 'web'):
-    #    build_table_of_contents()
 
 if __name__ == '__main__':
     build_cheatsheets('.pdf')
