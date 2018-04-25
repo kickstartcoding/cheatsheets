@@ -5,7 +5,7 @@ cheatsheet: 5
 
 # Requests & Responses {-}
 
-![requests and responses](./cheatsheets/images/request_response.pdf)\ 
+![requests and responses](./kickstart-backend/images/request_response.pdf)\ 
 
 
 # Terminology {-}

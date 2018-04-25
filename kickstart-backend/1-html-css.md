@@ -67,7 +67,7 @@ Comment
 
 # Anatomy of a tag {-}
 
-![HTML tag](./cheatsheets/images/anatomy_of_tag.pdf)\ 
+![HTML tag](./kickstart-backend/images/anatomy_of_tag.pdf)\ 
 
 
 \columnbreak

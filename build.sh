@@ -10,8 +10,6 @@ cd $MY_PATH
 function pandoc_build() {
     local $*
     COHORT="2018-Spring"
-    OUT="$MY_PATH/build/cheatsheets"
-    IN="$MY_PATH/cheatsheets"
     TEMPLATE="$MY_PATH/templates/cheatsheet.latex"
     echo "Building $name..."
     pandoc\
@@ -37,4 +35,4 @@ pandoc_build name="5-http"
 #pandoc_build name="6-django"
 #pandoc_build name="7-orm"
 
-IN="kickstart-frontend"
+#IN="kickstart-frontend"

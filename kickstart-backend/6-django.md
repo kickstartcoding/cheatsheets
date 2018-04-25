@@ -84,7 +84,7 @@ def get_name(request):
 
 \columnbreak
 
-![model view template](./cheatsheets/images/model_view_template.pdf)\ 
+![model view template](./kickstart-backend/images/model_view_template.pdf)\ 
 
 model
 
