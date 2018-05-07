@@ -71,7 +71,7 @@ Comment
 
 # CSS Rule Diagram {-}
 
-![HTML tag](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
+![CSS Rule](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
 
 \columnbreak
 
