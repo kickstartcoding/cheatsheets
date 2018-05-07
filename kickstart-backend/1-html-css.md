@@ -56,19 +56,22 @@ Semantic
 
 Comment
 
-:   Ignored by computer, but readable
-    for humans. Useful for temporarily
-    removing parts of your code.
+:   Ignored by computer, but readable for humans.
+    Useful for adding notes or temporarily removing
+    parts of your code.
 
     ```html
     <!-- This will be ignored! -->
     ```
 
 
-# Anatomy of a tag {-}
+# HTML Tag Diagram {-}
 
-![HTML tag](./kickstart-backend/images/anatomy_of_tag.pdf)\ 
+![HTML tag](./kickstart-backend/images/anatomy_of_tag_cmu.pdf)\ 
 
+# CSS Rule Diagram {-}
+
+![HTML tag](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
 
 \columnbreak
 
