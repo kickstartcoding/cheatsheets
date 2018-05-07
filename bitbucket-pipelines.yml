@@ -1,0 +1,13 @@
+image: jagregory/pandoc
+
+options:
+  max-time: 30
+
+pipelines:
+  tags:
+    v*:
+      - step:
+          script:
+            - bash build.sh
+          artifacts:
+            - build/**
