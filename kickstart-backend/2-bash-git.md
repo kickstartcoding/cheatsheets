@@ -126,7 +126,7 @@ Adding changes and committing
 
     ```bash
     git add -A
-    git commit -m 'Fixed :)'
+    git commit -m "Fixed :)"
     ```
 
 Finding out status
@@ -155,7 +155,7 @@ Branch workflow
     git checkout my-stuff
     # Do some work...
     git add -A
-    git commit -m 'did stuff'
+    git commit -m "did stuff"
     git checkout master
     git merge my-stuff
     ```
@@ -167,7 +167,7 @@ Interacting with GitHub
     git pull   # get updates
     # Do some work...
     git add -A
-    git commit -m 'it works!'
+    git commit -m "it works!"
     git push   # share updates
     ```
 
@@ -225,7 +225,7 @@ Reading text from file
 :   \ 
 
     ```python
-    a = open('file.txt').read()
+    a = open("file.txt").read()
     print("file1.txt has: ", a)
     ```
 
@@ -233,28 +233,28 @@ Writing to file
 :   \ 
 
     ```python
-    a = 'Some text for o.txt'
-    open('o.txt', 'w+').write(a)
+    a = "Some text for o.txt"
+    open("o.txt", "w+").write(a)
     ```
 
 Appending to file
 :   \ 
 
     ```python
-    b = 'Repeat this text x3'
-    open('o.txt', 'a+').write(b)
-    open('o.txt', 'a+').write(b)
-    open('o.txt', 'a+').write(b)
+    b = "Repeat this text x3"
+    open("o.txt", "a+").write(b)
+    open("o.txt", "a+").write(b)
+    open("o.txt", "a+").write(b)
     ```
 
 Combining files
 :   \ 
 
     ```python
-    a = open('f1.txt').read()
-    b = open('f2.txt').read()
+    a = open("f1.txt").read()
+    b = open("f2.txt").read()
     c = a + b
-    open('f3.txt', 'w+').write(c)
+    open("f3.txt", "w+").write(c)
     ```
 
 # Key Terms {-}
