@@ -51,7 +51,7 @@ dict
     a = {"a": 1, "b": 2}
     a["a"]      # 1
     a["b"]      # 2
-    del ["a"]   # deletes "a"
+    del a["a"]   # deletes "a"
     a["c"] = 3  # adds "c" to dict
     ```
 
