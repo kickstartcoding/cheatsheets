@@ -68,20 +68,15 @@ extends & blocks
 # Using Jinja {-}
 
 ```python
-# TODO fix
-from jinja2 import (
-    Template, Context
-)
-
-ctx = Context({
-    "name": "Eric Idle",
-})
+from jinja2 import Template
 
 template = Template("""
     <h1>hi {{ name }}!</h1>
 """)
 
-result = template.render(ctx)
+result = template.render(
+    name="Joaquín",
+)
 print(result)
 ```
 
@@ -178,8 +173,8 @@ and calls the entire thing a "class"
 
 Class
 
-:   also known as an object's "type", classes form blueprints for creating new
-object instances, defining methods and properties
+:   also known as an object's "type", classes form "blueprints" for creating
+new object instances, defining methods and properties
 
 
 Object instance
