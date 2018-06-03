@@ -190,8 +190,8 @@ Sets
 :   Like dicts, but no values. Can subtract or add.
 
     ```python
-    a = {'a', 1, 4, 'b'}
-    b = {'a', 'b'}
+    a = {"a", 1, 4, "b"}
+    b = {"a", "b"}
     print(a - b)  #  {1, 4}
     ```
 
