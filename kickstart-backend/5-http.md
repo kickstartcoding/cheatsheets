@@ -159,8 +159,57 @@ heroku config
 heroku ps:exec
 ```
 
+# Advanced Python {-}
+
+List comprehension
+:   Like a for-loop, but also creates a new list
+
+    ```python
+    names = ["John", "Paul", "G"]
+    long_names = [
+        n.lower() for n in names
+        if len(n) > 2
+    ]
+    # long_names is now:
+    # ["john", "paul"]
+    ```
 
 
+Unpacking assignment
+:   Can assign to two or more at once, in both loops and elsewhere
+
+    ```python
+    x, y = [35, 15]
+    pairs = [(10, 5), (8, 100)]
+    for x, y in pairs:
+        print(x * y)
+    ```
+
+
+Sets
+:   Like dicts, but no values. Can subtract or add.
+
+    ```python
+    a = {'a', 1, 4, 'b'}
+    b = {'a', 'b'}
+    print(a - b)  #  {1, 4}
+    ```
+
+
+Variable length arguments
+:   Can provide "catch-alls" for positional and named arguments.
+
+    ```python
+    def do_all(*args, **kwargs):
+        print(args, kwargs)
+        return sum(args)
+    do_all(3, 5, b=3)
+    ```
+
+
+
+
+<!--
 # Minimal Django Boilerplate {-}
 
 While insufficient for larger projects, this mini-Django boilerplate is great
@@ -185,4 +234,4 @@ urls.py
 views.py
 
 :   Contains code for templating and formatting responses to send back.
-
+-->
