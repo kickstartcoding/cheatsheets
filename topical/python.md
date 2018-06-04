@@ -1,6 +1,6 @@
 ---
-title: Python Control Flow
-cheatsheet: 3
+title: Kickstart Coding Python
+cheatsheet: Python
 ...
 
 # Types {-}
@@ -55,6 +55,15 @@ dict
     a["c"] = 3  # add "c" to dict
     ```
 
+sets
+:   same as dicts, but no values & can do arithmetic
+
+    ```python
+    a = {"a", 1, 4, "b"}
+    b = {"a", "b"}
+    print(a - b)  #  {1, 4}
+    ```
+
 list methods
 :   \ 
 
@@ -71,33 +80,36 @@ dict methods
     a = {"a": 1, "b": 2}
     a.get("c", 3) # 3 as default
     a.update({"d": 4}) # add more
-    a.keys() # iterable of keys
+    a.keys()   # iterable of keys
     a.values() # ... of values
-    a.items() # ... of both
+    a.items()  # ... of both
     ```
 
-# Key Terms {-}
+# Input/Output {-}
 
-Variable
+Prompting user
+:   \ 
 
-:   A named "bucket" that you can put data into.
+    ```python
+    name = input("Name? ")
+    print("Hi ", name)
+    ```
 
+Reading text from file
+:   \ 
 
-Assignment
+    ```python
+    a = open("file.txt").read()
+    print("file1.txt has: ", a)
+    ```
 
-:   The act of putting data into a variable.
+Writing to file
+:   \ 
 
-Function
-
-:   A bit of code given a name. Functions attached to objects are called "methods".
-
-Call
-
-:   To cause a function to run, also known as "invoking" the function.
-
-Arguments
-
-:   Data provided to a function when calling a function.
+    ```python
+    a = "Some text for o.txt"
+    open("o.txt", "w+").write(a)
+    ```
 
 \columnbreak
 
@@ -250,27 +262,3 @@ Lambda
     print("5^3 is ", cubed(5))
     ```
 
-
-# Programming Concepts {-}
-
-Pseudocode
-
-:   A "rough draft" in fake coding that serves as a middle-ground in the
-process of converting high-level thought into lower-level code.
-
-
-State diagram
-
-:   Diagramming what different variables should hold at different times in the
-execution of your application.
-
-Scope
-
-:   The idea that variables assigned within functions aren't accessible outside
-that function.
-
-
-Refactor
-
-:   The process of converting ugly, repetitive code into clean code which
-follows D.R.Y. (Don't Repeat Yourself) principles.

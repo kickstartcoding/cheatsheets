@@ -92,13 +92,13 @@ print(d["results"][0]["value"])
 from django.urls import path
 from django.http import HttpResponse
 
-def hello_world(request):
+def hi_world(request):
     return HttpResponse("""
         <h1>Hello Django World!</h1>
     """)
 
 urlpatterns = [
-    path("hello-world/", hello_world),
+    path("hello-world/", hi_world),
 ]
 ```
 
@@ -161,6 +161,17 @@ heroku ps:exec
 
 # Advanced Python {-}
 
+Try / except exceptions
+:   Handle or ignore errors.
+
+    ```python
+    a = [1, 2]
+    try:
+        lucky_13 = a[13]
+    except Exception as e:
+        print("It broke:", e)
+    ```
+
 List comprehension
 :   Like a for-loop, but also creates a new list
 
@@ -169,9 +180,7 @@ List comprehension
     long_names = [
         n.lower() for n in names
         if len(n) > 2
-    ]
-    # long_names is now:
-    # ["john", "paul"]
+    ]   # = ["john", "paul"]
     ```
 
 
@@ -179,22 +188,23 @@ Unpacking assignment
 :   Can assign to two or more at once, in both loops and elsewhere
 
     ```python
-    x, y = [35, 15]
     pairs = [(10, 5), (8, 100)]
-    for x, y in pairs:
-        print(x * y)
+    for left, right in pairs:
+        print(left * right)
+    x, y = [35, 15]
     ```
 
 
-Sets
-:   Like dicts, but no values. Can subtract or add.
+<!--
+sets
+:   like dicts, but no values. can do arithmetic.
 
     ```python
     a = {"a", 1, 4, "b"}
     b = {"a", "b"}
     print(a - b)  #  {1, 4}
     ```
-
+-->
 
 Variable length arguments
 :   Can provide "catch-alls" for positional and named arguments.
