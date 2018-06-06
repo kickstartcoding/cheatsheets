@@ -30,11 +30,9 @@ OUT="build/kickstart-backend"
 #pandoc_build name="1-html-css"
 #pandoc_build name="2-bash-git"
 #pandoc_build name="3-python"
-pandoc_build name="4-modules-oop"
+#pandoc_build name="4-modules-oop"
 pandoc_build name="5-http"
-
-# Following two have bugs for some reason:
-#pandoc_build name="6-django"
-#pandoc_build name="7-orm"
+pandoc_build name="6-django"
+pandoc_build name="7-orm"
 
 #IN="kickstart-frontend"

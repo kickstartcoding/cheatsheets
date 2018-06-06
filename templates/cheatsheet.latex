@@ -344,9 +344,6 @@ $endif$
 %%%%%%%%%%%
 
 %%%%%%%%%%% Cheatsheet multi-column stuff
-$if(twocolumns)$
-\begin{multicols*}{2}
-$endif$
 $if(cheatsheet)$
 $if(twocolumns)$
 \begin{multicols*}{2}
@@ -356,6 +353,10 @@ $if(fourcolumns)$
 $else$
 \begin{multicols*}{3}
 $endif$
+$endif$
+$else$
+$if(twocolumns)$
+\begin{multicols*}{2}
 $endif$
 $endif$
 %%%%%%%%%%%
