@@ -29,10 +29,10 @@ applying migration
 :   Using a *migration* to get the DB up-to-date and ready for use.
 
 
+
 MVT
 
-:   *Model-View-Template* is the terminology variant of MVC that is used by
-Django.
+:   *Model-View-Template* are the three categories of code in a Django project
 
 
 app
