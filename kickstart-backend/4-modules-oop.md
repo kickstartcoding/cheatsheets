@@ -3,86 +3,6 @@ title: Python Modules, Jinja, and OOP
 cheatsheet: 4
 ...
 
-# Jinja templates {-}
-
-variables
-:   \ 
-
-    ```html
-    <p>My name is {{ name }}!</p>
-    ```
-
-if
-:   \ 
-
-    ```html
-    {% if age > 17 %}
-        <p>You may continue.</p>
-    {% else %}
-        <p>Too young.</p>
-    {% endif %}
-    ```
-
-for
-:   \ 
-
-    ```html
-    {% for post in blog_posts %}
-        <h2>{{ post.title }}</h2>
-    {% empty %}
-        <p>No posts found!</p>
-    {% endfor %}
-    ```
-
-filters
-:   \ 
-
-    ```html
-    <p>Hi {{ name|upper }}</p>
-    ```
-
-include
-:   \ 
-
-    ```html
-    <form>
-    {% include "form.html" %}
-    </form>
-    ```
-
-extends & blocks
-:   \ 
-
-    ```html
-    {% extends "base.html" %}
-    {% block title %}
-        This replaces base.html's
-        title block
-    {% endblock %}
-
-    {% block main_content %}
-        Body might go here
-    {% endblock main_content %}
-    ```
-
-# Using Jinja {-}
-
-```python
-from jinja2 import Template
-
-template = Template("""
-    <h1>hi {{ name }}!</h1>
-""")
-
-result = template.render(
-    name="Joaquín",
-)
-print(result)
-```
-
-
-\columnbreak
-
 # Pipenv {-}
 
 
@@ -114,6 +34,28 @@ Install all packages listed in Pipfile
     pipenv install
     ```
 
+# Pipenv key terms {-}
+
+PyPI
+
+:   *Python Package Index* - Site with free Python packages.
+
+
+pipenv
+
+:   Tool for downloading packages from PyPI into a *virtualenv*
+
+
+virtualenv
+
+:   An "environment" that stores downloaded Python packages - each project gets
+one
+
+Pipfile
+
+:   Keeps a log of what you download with pipenv, so you or teammates can get
+set-up again
+
 # Modules {-}
 
 A module is a file or directory which provides functions, classes, or variables
@@ -137,28 +79,8 @@ from module_name.submod_a import (
 )
 ```
 
-# Jinja key terms {-}
-
-Context
-
-:   A dictionary representing a collection of *context variables* to be
-inserted or otherwise used in various places in a template
-
-
-Template
-
-:   A string or file, often consisting of HTML, containing "placeholder" spots
-for variable data to be inserted, and sometimes simple logic
-
-
-Render
-
-:   When a template is combined with a context to produce finished results
-
-
-
-
 \columnbreak
+
 
 
 # OOP Terminology {-}
@@ -183,16 +105,16 @@ Object instance
 *constructrion*.
 
 
+Property
+
+:   Data stored by the class, can be accessed with a "`.`" character
+
+
+
 Method
 
 :   A function defined in a class declaration that gets attached ("bound") to
-every class instance, and can be accessed with a `.` character
-
-
-Property
-
-:   Data stored by the class, can be accessed with a `.` character
-
+the object instances, also accessed with "`.`"
 
 Constructor
 
@@ -202,12 +124,12 @@ Constructor
 Extend
 
 :   Classes (the subclass) can *inherit* or *extend* another class (the base
-class) which effectively copies over all the methods and property defaults
+class) which effectively copies over the methods and properties
 
 
 Overriding
 
-:   When a subclass replaces a base class method we say it is overridden
+:   When a subclass replaces a base-class method we say it is overridden
 
 Super
 
@@ -217,8 +139,8 @@ base class
 
 Software architecture
 
-:   High-level, executive summary of the design of a piece of software to
-facilitate collaboration within a team
+:   Summary of the design of a piece of software to facilitate collaboration
+within a team
 
 Interface
 
@@ -241,5 +163,104 @@ class StudentUser(User):
     def login(self):
         super(self).login()
         self.attended = True
+
+user = User('Jo')
+felix = StudentUser('Felix')
 ```
+
+\columnbreak
+
+
+# Jinja templates {-}
+
+variables
+:   \ 
+
+    ```html
+    <h2>Hi {{ user.username }}!</h2>
+    ```
+
+if
+:   \ 
+
+    ```html
+    {% if age > 17 %}
+        <p>You may continue.</p>
+    {% else %}
+        <p>Too young.</p>
+    {% endif %}
+    ```
+
+for
+:   \ 
+
+    ```html
+    {% for post in blog_posts %}
+        <h2>{{ post.title }}</h2>
+    {% endfor %}
+    ```
+
+include
+:   \ 
+
+    ```html
+    <h2>User details</h2>
+    {% include "user_snippet.html" %}
+    ```
+
+filters
+:   \ 
+
+    ```html
+    <p>Hi {{ name|upper }}</p>
+    ```
+
+extends & blocks
+:   \ 
+
+    ```html
+    {% extends "base.html" %}
+    {% block title %}
+        Replaces base.html's block
+    {% endblock %}
+    {% block main_content %}
+        Replace main_content
+    {% endblock main_content %}
+    ```
+
+# Using Jinja {-}
+
+```python
+from jinja2 import Template
+
+template = Template("""
+    <h1>hi {{ name }}!</h1>
+""")
+
+result = template.render(
+    name="Joaquin",
+)
+print(result)
+```
+
+
+# Templating key terms {-}
+
+Context
+
+:   A dict with *context variables* to be inserted or otherwise used in various
+places in a template
+
+
+Template
+
+:   A string or file typically of HTML, containing "placeholder" spots for
+variable data to be inserted, and simple logic
+
+
+Render
+
+:   When a template is executed with a context
+
+
 

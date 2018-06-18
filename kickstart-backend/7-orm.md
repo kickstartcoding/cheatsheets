@@ -6,7 +6,6 @@ twocolumns: true
 
 # Model {-}
 
-
 ```python
 from django.db import models
 from django.core.validators import (
@@ -36,37 +35,55 @@ class Book(models.Model):
     last_updated = models.DateTimeField(
         auto_now=True)
 
-    # For "multiple-choice" fields, use this pattern
-    CATEGORIES = {
-        "fict": "Fiction",
-        "nonfict": "Non-fiction",
-    }
+    # Multiple-choice fields, pattern is:
+    # "internal code, human-readable label"
+    CATEGORIES = (
+        ("fict", "Fiction"),
+        ("nonfict", "Non-fiction"),
+    )
     category = models.CharField(
         max_length=10,
         default="fict",
         choices=CATEGORIES,
     )
 
-    # More complicated example with custom validators
+    # example with custom validators
     num_stars = models.IntegerField(
-        validators=[
-            MaxValueValidator(5),
-            MinValueValidator(1),
-        ],
+        validators=[MaxValueValidator(5),
+                    MinValueValidator(1)],
     )
+
+    def __str__(self):     # Define __str__ to give
+        return self.title  # string description
 
 
 # ManyToMany relationships
 class ReadingList(models.Model):
     books = models.ManyToManyField(Book)
-
 ```
+
+# Key words {-}
+
+id
+
+:   Automatically incrementing integer included with all Models
+
+
+queryset
+
+:   Django terminology for the list-like data returned from database
+
+
+CRUD
+
+:   Create, Read, Update, Delete - The four main operations of web application
+development
 
 
 # Migration work-flow {-}
 
 ```bash
-# Generate migrations for some recent DB changes
+# Generate migrations for recent model changes
 python manage.py makemigrations
 
 # Double check where we're at
@@ -99,4 +116,43 @@ One-to-one
 exactly one instance of another, effectively "splitting
 a model into two".  *Example:* `Album` with
 `AlbumArtwork`.
+
+
+# Django CRUD Examples {-}
+
+ORM operations like this typically go in your `views.py` to accomplish the
+business logic necessary based on your application goals.
+
+```python
+from .models import Book
+
+### CREATE
+book = Book.objects.create(
+    title="Great Expectations",
+    num_stars=4,
+)
+
+### READ
+# Get all fiction books to loop through
+fiction_books = Book.objects.filter(category="fict")
+# Get all 4+ star books, newest first
+new_good_books = (
+    Book.objects.filter(num_stars__gt=3)
+    .order_by("-date")
+)
+
+### UPDATE
+book = Book.objects.get(title="Great Expectations")
+book.num_stars = 5  # Updates a single property
+book.save()         # Saves the change to the DB
+
+nonfict = Book.objects.filter(category="nonfict")
+nonfict.update(num_stars=5)  # Updates all books
+
+### DELETE
+book = Book.objects.get(title="Great Expectations")
+book.delete()       # Only delete a single book
+bad_books = Book.objects.filter(num_stars__lt=3)
+bad_books.delete()  # Delete every 1 or 2 star book
+```
 
