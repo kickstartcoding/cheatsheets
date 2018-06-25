@@ -60,8 +60,8 @@ WHERE username = 'janeqhacker';
 -- INT for integers, BOOLEAN for true/false
 -- NOT NULL is for mandatory fields
 -- TIMESTAMP is for a date/time field
--- VARCHAR is for "short bits of text"
--- TEXT is only "long bits of text"
+-- VARCHAR is for most text fields
+-- TEXT or BLOB is for arbitrarily long data
 CREATE TABLE users (
     id INT NOT NULL,
     username VARCHAR(63) NOT NULL,
