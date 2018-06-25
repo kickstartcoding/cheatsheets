@@ -33,6 +33,7 @@ OUT="build/kickstart-backend"
 #pandoc_build name="4-modules-oop"
 #pandoc_build name="5-http"
 #pandoc_build name="6-django"
-pandoc_build name="7-orm"
+#pandoc_build name="7-orm"
+pandoc_build name="8-postgres"
 
 #IN="kickstart-frontend"
