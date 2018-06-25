@@ -57,12 +57,19 @@ WHERE username = 'janeqhacker';
 # SQL Table Management{-}
 
 ```SQL
+-- INT for integers, BOOLEAN for true/false
+-- NOT NULL is for mandatory fields
+-- TIMESTAMP is for a date/time field
+-- VARCHAR is for "short bits of text"
+-- TEXT is only "long bits of text"
 CREATE TABLE users (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL,
     username VARCHAR(63) NOT NULL,
-    email VARCHAR(255) NOT NULL,
     first_name VARCHAR(127),
     last_name VARCHAR(127),
+    subscribed BOOLEAN DEFAULT True,
+    bio TEXT,
+    created_on TIMESTAMP,
     age INT,
     PRIMARY KEY (id)
 );
