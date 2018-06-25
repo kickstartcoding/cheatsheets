@@ -120,7 +120,7 @@ WHERE username = 'janeqhacker';
 
 Joins combine data from multiple tables. They are categorized into 4
 categories, based on how they do the matching of data between the tables.
-Examples for fetching data from `users` (the *left table*) and tweets (the
+Examples for fetching data from `users` (the *left table*) and `tweets` (the
 *right table*) as below:
 
 INNER JOIN
