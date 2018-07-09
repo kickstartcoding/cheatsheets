@@ -123,31 +123,31 @@ Modifier
 
 # CSS "Pseudos" {-}
 
-Pseudo-elements
+\ \ \ \ \ Pseudo-elements
 :   \ 
 
     ```css
-    h1:before {
-      content: "-";
-      color: blue;
-    }
+     h1:before {
+        content: "-";
+        color: blue;
+      }
     ```
 
 
-Pseudo-selectors
+\ \ \ \ \ Pseudo-selectors
 :   \ 
 
     ```css
-    a:hover { color: blue; }
+      a:hover { color: blue; }
 
-    /* First paragraph margin */
-    p:nth-child(1) {
-        margin-left: 10px;
-    }
-    /* Striped table rows */
-    tr:nth-child(odd) {
-        background: gray;
-    }
+      /* First p margin */
+      p:nth-child(1) {
+          margin-left: 10px;
+      }
+      /* Striped table rows */
+      tr:nth-child(odd) {
+          background: gray;
+      }
     ```
 
 # CSS Animation {-}
