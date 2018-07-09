@@ -4,24 +4,26 @@ cheatsheet: 1
 ...
 
 
-![CSS Rule](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
+# Box model {-}
+
+
+![CSS Rule](./kickstart-frontend/images/box_model_diagram.pdf)\ 
+
 
 # CSS Terminology {-}
 
 
-* specificity - the more specific the selector it is, the more likely it is
-    to "win" against other selectors
-* responsive design - react to the size of the browser.
+![CSS Rule](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
 
 Selector
-:    What "aims" a CSS rule
+:    "Targets" a CSS rule
 
 Specificity
 :    The more specific the selector it is, the more likely it is to win against
 other selectors targeting the same element
 
 Responsive design
-:    Making your design look good on mobile *and* desktop
+:    Looking good on mobile *and* desktop
 
 Media queries
 :    If statements for CSS, apply CSS to browser sizes.
@@ -56,17 +58,38 @@ Media queries
 
 \columnbreak
 
+# Grid Container {-}
 
-# BEM (Block Element Modifier) {-}
+Use `display: grid` and specify columns/rows.
 
-Block Element Modifier is a naming convention for CSS.
+![Grid Example](./kickstart-frontend/images/grid_template_example.pdf)\ 
 
-**Block** is a standalone entity that is meaningful on its own.
+```css
+.Container {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 50px auto 90px;
+}
+```
 
-**Element** is a part of a block that has no standalone meaning.
+# Grid Child Positioning {-}
 
-Use one dash and camel-case: `ComponentName-descendentName`.
+*Optional:* Child elements can be custom positioned and sized.
 
+![Grid Example](./kickstart-frontend/images/grid_child_example.pdf)\ 
+
+```css
+.ChildElement {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+```
+
+# BEM {-}
+
+
+Block-Element-Modifier
+:    Naming convention for CSS
 
 Block
 :    Standalone entity meaningful on its own. Use camel-case: `ComponentName`.
@@ -82,45 +105,93 @@ Modifier
 
 
 ```css
-.SubmitButton { background: orange; }
-.SubmitButton-icon { width: 12px; }
-.SubmitButton--disabled { background: gray; }
+.OkBtn { background: orange; }
+.OkBtn-icon { width: 12px; }
+.OkBtn--disabled { color: gray; }
 ```
 
 ```html
-<div class="SubmitButton--disabled">
+<div class="OkBtn--disabled">
     <img src="ok.png"
-        class="SubmitButton--icon" />
-    Submit
+        class="OkBtn--icon" />
+    Okay
 </div>
 ```
+
 \columnbreak
 
-# Grid & Flex Styling {-}
+
+# CSS "Pseudos" {-}
+
+Pseudo-elements
+:   \ 
+
+    ```css
+    h1:before {
+      content: "-";
+      color: blue;
+    }
+    ```
 
 
-**Grid 2x3**
+Pseudo-selectors
+:   \ 
 
-Building a 2x3 grid, 50px fixed top row, and 100px right and left column with
-middle column filling remaining space.
+    ```css
+    a:hover { color: blue; }
+
+    /* First paragraph margin */
+    p:nth-child(1) {
+        margin-left: 10px;
+    }
+    /* Striped table rows */
+    tr:nth-child(odd) {
+        background: gray;
+    }
+    ```
+
+# CSS Animation {-}
 
 ```css
-.Container {
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-columns: 100px 1fr 100px;
+.Link {
+    color: blue;
+    padding-left: 10px;
+    transition: color 1s,
+                padding-left 3s;
+}
+.Link:hover {
+    color: green;
+    padding-left: 20px;
 }
 ```
 
-\columnbreak
+# Adding JavaScript to HTML{-}
 
-# JavaScript {-}
+**Responding to clicks**
 
+```html
+<div onclick="alert('Hello')">
+    Click for annoying pop-up
+</div>
+```
 
+**Modifying DOM**
 
-```javascript
-alert("hi");       // pop-up
-console.log("hi"); // dev console
+```html
+<div id="a" onclick="
+  document.querySelector('#a')
+     .innerHTML += '+'
+">Plus</div>
+```
+
+**Running on page load**
+
+```html
+<script src="http://ex.amp/le.js">
+</script>
+<script>           // Print to dev
+console.log("hi"); // tools console
+</script>
 ```
 
 

@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="box_model_diagram.svg"
-   inkscape:version="0.92.1 r15371">
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <defs
      id="defs2">
     <marker
@@ -222,16 +222,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.8018994"
-     inkscape:cx="179.67063"
-     inkscape:cy="108.66377"
+     inkscape:cx="156.34179"
+     inkscape:cy="96.16747"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g208"
      showgrid="false"
      showguides="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="5"
      fit-margin-left="5"
@@ -245,7 +245,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -259,31 +259,32 @@
        id="rect4506"
        width="51.883709"
        height="30.765696"
-       x="79.058144"
+       x="78.659439"
        y="133.11716" />
     <rect
        style="opacity:1;fill:#d7f4e3;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.49554759;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.49554759, 0.99109519;stroke-dashoffset:0;stroke-opacity:0.94117647"
        id="rect4520"
        width="39.081676"
        height="13.543151"
-       x="85.45916"
+       x="85.060455"
        y="141.72842" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot4498"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,65.610415,51.459685)"><flowRegion
+       transform="matrix(0.26458333,0,0,0.26458333,65.937174,51.459685)"><flowRegion
          id="flowRegion4500"><rect
            id="rect4502"
            width="274.33731"
            height="47.255043"
            x="114.57143"
            y="276.23398" /></flowRegion><flowPara
-         id="flowPara4504">Margin</flowPara></flowRoot>    <flowRoot
+         id="flowPara4504"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif'">Margin</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4498-3"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,65.556155,57.330799)"><flowRegion
+       transform="matrix(0.26458333,0,0,0.26458333,66.356084,57.330799)"><flowRegion
          id="flowRegion4500-6"
          style="fill:#ffffff"><rect
            id="rect4502-7"
@@ -292,38 +293,45 @@
            x="114.57143"
            y="276.23398"
            style="fill:#ffffff" /></flowRegion><flowPara
-         id="flowPara4504-5">Border</flowPara></flowRoot>    <flowRoot
+         id="flowPara4504-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif'">Border</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4498-35"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,64.114382,63.21073)"><flowRegion
+       transform="matrix(0.26458333,0,0,0.26458333,64.726003,63.21073)"><flowRegion
          id="flowRegion4500-62"><rect
            id="rect4502-9"
            width="274.33731"
            height="47.255043"
            x="114.57143"
            y="276.23398" /></flowRegion><flowPara
-         id="flowPara4504-1">Padding</flowPara></flowRoot>    <flowRoot
+         id="flowPara4504-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif'">Padding</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4498-35-2"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.26458333,0,0,0.26458333,64.070457,70.923553)"><flowRegion
+       transform="matrix(0.26458333,0,0,0.26458333,65.033911,70.923553)"><flowRegion
          id="flowRegion4500-62-7"><rect
            id="rect4502-9-0"
            width="274.33731"
            height="47.255043"
            x="114.57143"
            y="276.23398" /></flowRegion><flowPara
-         id="flowPara4504-1-9">Content</flowPara></flowRoot>    <path
-       style="fill:none;stroke:#000000;stroke-width:0.48782003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart);marker-end:url(#marker6059)"
-       d="m 118.60714,142.45925 v 12.23271"
-       id="path4694"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49282375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow1Mend)"
-       d="M 123.59445,153.36905 H 86.63168"
-       id="path4694-2"
-       inkscape:connector-curvature="0" />
+         id="flowPara4504-1-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif'">Content</flowPara></flowRoot>    <g
+       id="g204"
+       transform="translate(-0.39870633)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4694"
+         d="m 118.60714,142.45925 v 12.23271"
+         style="fill:none;stroke:#000000;stroke-width:0.48782003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart);marker-end:url(#marker6059)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4694-2"
+         d="M 123.59445,153.36905 H 86.63168"
+         style="fill:none;stroke:#000000;stroke-width:0.49282375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow1Mend)" />
+    </g>
     <flowRoot
        xml:space="preserve"
        id="flowRoot6206"
@@ -335,16 +343,20 @@
            height="82.14286"
            x="355.71429"
            y="599.66254" /></flowRegion><flowPara
-         id="flowPara6212" /></flowRoot>    <path
-       style="fill:#ffffff;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart-3);marker-end:url(#marker6059-5)"
-       d="m 127.17832,131.30879 v 33.92868"
-       id="path4694-7"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:#ffffff;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-2);marker-end:url(#Arrow1Mend-8)"
-       d="M 132.06278,163.88286 H 77.788647"
-       id="path4694-2-3"
-       inkscape:connector-curvature="0" />
+         id="flowPara6212" /></flowRoot>    <g
+       id="g208"
+       transform="translate(-0.20970844)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4694-7"
+         d="m 128.83958,131.30879 v 33.92868"
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart-3);marker-end:url(#marker6059-5)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4694-2-3"
+         d="M 132.06278,163.88286 H 77.788647"
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-2);marker-end:url(#Arrow1Mend-8)" />
+    </g>
     <flowRoot
        xml:space="preserve"
        id="flowRoot7379"
@@ -360,14 +372,15 @@
        xml:space="preserve"
        id="flowRoot7387"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.19979774,0,0,0.19979774,43.990082,16.219445)"><flowRegion
+       transform="matrix(0.19979774,0,0,0.19979774,44.046595,16.219445)"><flowRegion
          id="flowRegion7389"><rect
            id="rect7391"
            width="291.42856"
            height="90"
            x="250.71428"
            y="752.51971" /></flowRegion><flowPara
-         id="flowPara7393">border-box</flowPara></flowRoot>    <flowRoot
+         id="flowPara7393"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Typewriter Text';-inkscape-font-specification:'CMU Typewriter Text'">border-box</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot7387-6"
        style="font-style:normal;font-weight:normal;font-size:20px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -378,5 +391,6 @@
            height="90"
            x="250.71428"
            y="752.51971" /></flowRegion><flowPara
-         id="flowPara7393-9">content-box</flowPara></flowRoot>  </g>
+         id="flowPara7393-9"
+         style="-inkscape-font-specification:'CMU Typewriter Text';font-family:'CMU Typewriter Text';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">content-box</flowPara></flowRoot>  </g>
 </svg>
