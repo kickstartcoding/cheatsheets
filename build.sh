@@ -49,3 +49,9 @@ OUT="build/kickstart-frontend"
 pandoc_build name="1-css"
 pandoc_build name="2-javascript"
 
+
+IN="topical"
+OUT="build/topical"
+pandoc_build name="py-es6"
+pandoc_build name="python"
+
