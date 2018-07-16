@@ -6,7 +6,7 @@ cheatsheet: 2
 # Python {-}
 
 ```python
-# Strings
+# Variables
 full_name = "Jane Hacker"
 pi = 3.14
 
@@ -30,7 +30,6 @@ while x < 3:
     x = x + 1
 
 
-
 # If-statements
 if full_name == "Jane":
     print("Hi, Jane!")
@@ -38,7 +37,6 @@ elif full_name == "Alice":
     print("Hey Alice")
 else:
     print("Don't know you")
-
 
 
 # Functions
@@ -54,8 +52,6 @@ if age < 18 and drink == "beer":
 if age > 18 or drink == "soda":
     print("Great choice")
 
-
-
 # Class syntax
 class User(BaseUser):
     def __init__(self, name):
@@ -68,9 +64,14 @@ user = User("janeqhacker")
 
 
 
+
 # Making request (Synchronous)
 response = requests.get("cnn.com")
-print("Resp:", response)
+data = response.json()
+print("Resp:", data)
+
+
+
 ```
 
 
@@ -127,7 +128,6 @@ while (x < 3) {
     console.log("X:", x);
     x++;
 }
-
 // If-statements
 if (fullName === "Jane") {
     console.log("Hi, Jane!");
@@ -150,7 +150,6 @@ if (age < 18 && drink === "beer") {
 if (age > 18 || drink === "soda") {
     console.log("Great choice");
 }
-
 // Class syntax
 class User extends BaseUser {
     constructor(name) {
@@ -164,8 +163,10 @@ class User extends BaseUser {
 let user = new User("janeqhacker");
 
 // Making request (Asynchronous)
-fetch("cnn.com").then(response => {
-    console.log("Resp:", response);
+fetch("http://cnn.com")
+.then(response => response.json())
+.then(data => {
+    console.log("Resp:", data);
 });
 ```
 
@@ -185,20 +186,34 @@ var
 :   *Legacy* --- similar to let, unscoped.
 
 
-# JavaScript Objects {-}
+# DOM Manipulation  {-}
 
 ```javascript
-names.map((name) => {
-    console.log("name:", name);
-});
+// Creating elements
+let p = document
+    .createElement("p");
+p.textContent = "New Paragraph";
+
+// Inserting elements into page
+let d = document
+    .querySelector("#some_id");
+d.appendChild(p);
+
+// Fetching many elements
+let allImages = document
+    .querySelectorAll("img");
+
+// Add a class to all images
+for (let img of allImages) {
+    img.classList.add("Thumb");
+}
 ```
 
 
-# Anonymous Functions {-}
+# Alternate function syntax {-}
 
 ```javascript
-// Assigning an anonymous function
-let greeter = name => {
+let greeter = (name) => {
     console.log("Hi", name);
 };
 
