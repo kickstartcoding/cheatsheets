@@ -48,6 +48,7 @@ IN="kickstart-frontend"
 OUT="build/kickstart-frontend"
 pandoc_build name="1-css"
 pandoc_build name="2-javascript"
+pandoc_build name="3-react"
 
 
 IN="topical"
