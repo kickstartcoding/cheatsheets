@@ -15,7 +15,7 @@ class Button {
   render() {
     <button className="Button"
       onClick={this.props.onClick}>
-      {props.children}
+      {this.props.children}
     </button>
   }
 }
