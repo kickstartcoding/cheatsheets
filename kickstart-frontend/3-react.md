@@ -108,7 +108,7 @@ const divOfParagraphs = (
 );
 ```
 
-# React example
+# Full React Example {-}
 
 ```javascript
 import React, { Component } from "react";
@@ -138,8 +138,10 @@ class App extends Component {
         fetch("http://some.com/api/")
             .then(response => response.json())
             .then(data => {
-                console.log('new rates', data.users);
-                this.setState({users: data.rates});
+                console.log("Data received:", data);
+                this.setState({
+                    messages: data.messages,
+                });
             });
     }
 
@@ -165,8 +167,8 @@ class App extends Component {
             <div className="App">
                 <h1>Messenger</h1>
                 {messageParagraphs}
-                <input onChange={name}
-                    value={this.onMessageChange} />
+                <input onChange={this.onMessageChange}
+                    value={this.state.message} />
                 <button onClick={() => alert("Hi")}>
                     <img src={sendIcon} />
                     Send message
