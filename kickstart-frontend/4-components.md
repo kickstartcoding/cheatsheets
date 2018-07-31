@@ -1,12 +1,11 @@
 ---
-title: Node & React
+title: Components
 twocolumns: true
-cheatsheet: 3
+cheatsheet: 4
 ...
 
 
 # Defining components {-}
-
 
 `src/components/Button/Button.js`
 
