@@ -50,6 +50,7 @@ pandoc_build name="1-css"
 pandoc_build name="2-javascript"
 pandoc_build name="3-react"
 pandoc_build name="4-components"
+pandoc_build name="5-mern"
 
 
 IN="topical"
