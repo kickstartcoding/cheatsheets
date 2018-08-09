@@ -10,8 +10,9 @@ cheatsheet: 4
 `src/components/Button/Button.js`
 
 ```html
+import React, { Component } from "react";
 import "./Button.css";
-class Button {
+class Button extends Component {
   render() {
     <button className="Button"
       onClick={this.props.onClick}>
