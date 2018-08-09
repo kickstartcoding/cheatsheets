@@ -14,17 +14,13 @@ component based on the URL path
 `<Link>`{.html}
 
 :    Functions like an *a tag* link, "tricks" user that they are going to a
-new page, but doesn't truly cause a page refresh
+new page while changing URL
 
 `<Switch>`{.html}
 
 :    Let only 1 route get matched
 
 
-`<BrowserHistory>`{.html}
-
-:    Uses the Browser history (back and forward buttons) to simulate going
-from one page to another
 
 
 
@@ -120,9 +116,9 @@ large applications (analogy: *Django apps*)
 **Action Creators** (found in `actions/`)
 ```javascript
 const doIncrement = () => {
-  return { type: INCREMENT }; }
+  return {type: INCREMENT};}
 const addTodo = (item) => {
-  return { type: ADD, text: item }; }
+  return {type: ADD, text: item};}
 ```
 
 **Dispatching** (found in `components/`)
