@@ -150,7 +150,6 @@ switch (action.type) {
     todoList: todoList.concat([
     text: action.text ]),
   });
-  /* ... */
 ```
 
 
