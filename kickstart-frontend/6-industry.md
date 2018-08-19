@@ -13,8 +13,7 @@ cheatsheet: 6
 
 Agile
 
-:    Dominant organizational attitude among Bay Area start-ups, involving
-continuously improving the product in short increments in small teams
+:    Most popular modern methodology to organize software dev
 
 Story
 
@@ -35,8 +34,11 @@ effort, and *velocity* (team effectiveness) is measured based on total *story
 points* performed each sprint
 
 
-Kanban
+Kanban board
 
+:    Story completion showed in columns
+
+Kanban
 :    Popular organizational method to produce a continuous flow of effort, and
 *cycle time* is measured based on average time it takes to complete stories
 
@@ -135,7 +137,60 @@ End-to-end testing
 from a user standpoint
 
 
+# Jest Cheatsheet {-}
 
+
+```javascript
+x = // result of operation
+
+// Strict equality
+expect(x).toBe(42)
+// Strict equality
+expect(x).not.toBe(3)
+// Deep equality
+expect(x).toEqual([1, 2])
+// Deep equality
+expect(x).toEqual({ b: 2 })
+
+// Matches anything true-like
+// e.g. true, "test", 123
+expect(x).toBeTruthy()
+// Matches anything false-like
+// e.g. false, 0, ""
+expect(x).toBeFalsy()
+
+// Numbers
+expect(x).toBeGreaterThan(1)
+expect(x).toBeGreaterThanOrEqual(1)
+expect(x).toBeLessThan(2)
+expect(x).toBeLessThanOrEqual(1)
+expect(x).toBeCloseTo(0.3, 5)
+
+// Strings (inclusion)
+expect(x).toMatch("tea")
+expect(x).not.toMatch("coffee")
+
+// Arrays & Objects
+expect(x).toHaveLength(3)
+expect(x).toContain("Alice")
+expect(a).toHaveProperty("a")
+expect(a).toMatchObject({ a: 1 })
+```
+
+# Nightmare Cheatsheet {-}
+
+
+```javascript
+nightmare
+.goto("yahoo.com")
+.type("[name=p]", "dog memes")
+.click(".SearchButton")
+.wait("#main")
+.evaluate(() => (
+  document
+    .querySelector("a").href
+))
+```
 
 
 
