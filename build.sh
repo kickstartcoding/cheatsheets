@@ -52,6 +52,7 @@ pandoc_build name="3-react"
 pandoc_build name="4-components"
 pandoc_build name="5-mern"
 pandoc_build name="6-industry"
+pandoc_build name="7-algorithms"
 
 
 IN="topical"
