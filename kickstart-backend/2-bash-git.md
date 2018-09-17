@@ -66,7 +66,7 @@ Reading data from file
     cat file1 file2 file3
     ```
 
-Piping data into file
+Redirecting data into file
 :   \ 
 
     ```bash
@@ -89,9 +89,9 @@ Auto complete
 :   Start typing then hit `<Tab>`. Hit twice for
 options.
 
-Re-run previous command
+Previous command history
 
-:   `<Up>` then `<Enter>`
+:   `<Up>`
 
 Search previous history
 
@@ -99,27 +99,44 @@ Search previous history
 back, `<Enter>` to run.
 
 
+
+Wildcards
+:   \ 
+
+    ```bash
+    rm *.jpg # Delete jpg files
+    ```
+
 Advanced piping
 :   \ 
 
     ```bash
     # Search process for "chrome"
     ps -e | grep chrome
-    # Search dir for ".py" files
-    find . | grep .py$
+    find . | grep .py$ # find py files
     ```
 
 \columnbreak
 
-
 # Git {-}
 
-Starting repo
+Starting GitHub repo
+:   Click button on GitHub.  Check box to create with "README".  Then clone
+locally (`U` and `R` should be username and repo name):
+
+```bash
+git clone http://github.com/U/R.git
+```
+
+
+Starting (local-only) repo
 :  \ 
 
     ```bash
     git init
     ```
+
+
 
 Adding changes and committing
 :   \ 
@@ -164,11 +181,11 @@ Interacting with GitHub
 :   \ 
 
     ```bash
-    git pull   # get updates
+    git pull # get updates
     # Do some work...
     git add -A
     git commit -m "it works!"
-    git push   # share updates
+    git push # share updates
     ```
 
 # Key Terms {-}
@@ -225,50 +242,50 @@ Reading text from file
 :   \ 
 
     ```python
-    a = open("file.txt").read()
-    print("file1.txt has: ", a)
+    text = open("file.txt").read()
+    print("file.txt has: ", text)
     ```
 
 Writing to file
 :   \ 
 
     ```python
-    a = "Some text for o.txt"
-    open("o.txt", "w+").write(a)
+    text = "Some text for o.txt"
+    open("o.txt", "w+").write(text)
     ```
 
 Appending to file
 :   \ 
 
     ```python
-    b = "Repeat this text x3"
-    open("o.txt", "a+").write(b)
-    open("o.txt", "a+").write(b)
-    open("o.txt", "a+").write(b)
+    text = "Repeat this text x3"
+    open("o.txt", "a+").write(text)
+    open("o.txt", "a+").write(text)
+    open("o.txt", "a+").write(text)
     ```
 
 Combining files
 :   \ 
 
     ```python
-    a = open("f1.txt").read()
-    b = open("f2.txt").read()
-    c = a + b
-    open("f3.txt", "w+").write(c)
+    start = open("f1.txt").read()
+    end = open("f2.txt").read()
+    full = start + end
+    open("f3.txt", "w+").write(full)
     ```
 
 # Key Terms {-}
 
 Variable
 
-:   A named "bucket" that holds data. Can be updated with *assignment* `=`
+:   A named "bucket" that holds data. Can be updated with *assignment operator*
+(equals sign `=`)
 
 String
 
-:   A data type that represents text (the term comes
-from "a string of characters")
+:   Text data, term comes from "string of characters"
 
 Operator
 
 :   A symbol that can perform arithmetic, modifying and
-combines data in variables, such as `+` and `-`.
+combines data in variables, e.g. `+/-`.

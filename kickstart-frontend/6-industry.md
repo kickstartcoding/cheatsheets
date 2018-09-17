@@ -70,9 +70,9 @@ the process to achieve *"continuous deployment"*
 \columnbreak
 
 
-# Server Topography{-}
+# Server Topology{-}
 
-![server topography](./kickstart-frontend/images/server_topography.pdf)\ 
+![server Topology](./kickstart-frontend/images/server_topography.pdf)\ 
 
 
 # Encryption  {-}

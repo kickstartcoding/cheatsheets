@@ -11,7 +11,7 @@ FILTER="$1"
 
 function pandoc_build() {
     local $*
-    COHORT="2018-Spring"
+    COHORT="2018-Fall"
     TEMPLATE="$MY_PATH/templates/cheatsheet.latex"
 
     # Provides the option of selecting only certain cheatsheets 
