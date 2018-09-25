@@ -6,7 +6,7 @@ cheatsheet: 3
 # Types {-}
 
 str
-:   \ 
+:   string of characters
 
     ```python
     a = "hello!"
@@ -26,13 +26,13 @@ number types
     ```
 
 list
-:   \ 
+:   sequentially hold other data
 
     ```python
-    a = ["a", "b", 3]
-    a[0]        # "a"
+    a = ["Jane", "b", 3]
+    a[0]        # "Jane"
     a[1]        # "b"
-    a[-1]       # "3"
+    a[-1]       # 3
     a[1:2]      # ["b", 3]
     ```
 
@@ -45,7 +45,7 @@ tuple
     ```
 
 dict
-:   \ 
+:   associate "key" with "values"
 
     ```python
     a = {"test": 1, "b": "hello"}
@@ -68,7 +68,7 @@ dict methods
 :   \ 
 
     ```python
-    a = {"a": 1, "b": 2}
+    a = {"hi": "hola", "b": 3}
     a.get("c", 3) # 3 as default
     a.update({"d": 4}) # add more
     a.keys() # iterable of keys
@@ -89,11 +89,13 @@ Assignment
 
 Function
 
-:   A bit of code given a name. Functions attached to objects are called "methods".
+:   A bit of code given a name. Functions attached to "objects" (data
+types) are called *methods*.
 
-Call
+Invoke
 
-:   To cause a function to run, also known as "invoking" the function.
+:   To cause a function to run (aka *calling* the function).
+Written as parenthesis which optionally enclose *arguments*.
 
 Arguments
 
@@ -104,7 +106,7 @@ Arguments
 # Branching {-}
 
 Basic if
-:   Optionally execute indented code based on the truth value of the condition
+:   Optionally execute indented code based on the truth value of the *condition*
 
     ```python
     if cost < 10:
@@ -174,7 +176,7 @@ While loop
     i = 2
     while i < 10000:
         print("square:", i)
-        i = i ** 2
+        i = i * i
     ```
 
 Interruption
@@ -243,7 +245,7 @@ Comment
     ```
 
 Lambda
-:   \ alternative syntax for one-liners
+:   \ alt. syntax for one-liners
 
     ```python
     cubed = lambda i: i ** 3
@@ -255,14 +257,15 @@ Lambda
 
 Pseudocode
 
-:   A "rough draft" in fake coding that serves as a middle-ground in the
-process of converting high-level thought into lower-level code.
+:   A "rough draft", fake code in English which serves as a middle-ground
+in the process of converting high-level thought into low-level, real
+programming code
 
 
 State diagram
 
 :   Diagramming what different variables should hold at different times in the
-execution of your application.
+execution of your code.
 
 Scope
 
@@ -274,3 +277,6 @@ Refactor
 
 :   The process of converting ugly, repetitive code into clean code which
 follows D.R.Y. (Don't Repeat Yourself) principles.
+
+
+
