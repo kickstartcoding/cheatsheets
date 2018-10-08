@@ -42,47 +42,58 @@ each app can have a full vertical "slice" of models, views, and templates.
 
 # Using Django forms {-}
 
+
+**models.py**
+
+```python
+class NewPersonForm(models.Model):
+	name = forms.CharField(max_length=64)
+	email = forms.EmailField()
+```
+
+
+
 **views.py**
 
 ```python
-class NewUserForm(forms.Form):
-	name = forms.TextField(required=True)
+class NewPersonForm(forms.Form):
+	name = forms.CharField(required=True)
 	email = forms.EmailField()
 
-def get_name(request):
+# urls.py has: path("create/", views.person_create),
+def person_create(request):
     if request.method == "GET":
         # Is initial GET: Create a blank form
-        form = NewUserForm()
+        form = NewPersonForm()
     else:
         # Is POST: Create a form based on POST data
-        form = NewUserForm(request.POST)
+        form = NewPersonForm(request.POST)
         if form.is_valid():
-            # If valid, create a new user & redirect
-            user = User()
-            user.username = form.cleaned_data["name"]
-            user.email = form.cleaned_data["email"]
-            user.save()
-            return HttpResponseRedirect("/thanks/")
-
+            # If valid, create a new person & redirect
+            person = Person()
+            person.username = form.cleaned_data["name"]
+            person.email = form.cleaned_data["email"]
+            person.save()
+            return redirect("/thanks/")
     ctx = {"form": form}
-    return render(request, "users/create.html", ctx)
+    return render(request, "create.html", ctx)
 ```
 
-**users/create.html**
+
+**templates/create.html**
 
 ```html
-{% extend "base.html" %}
-{% block content %}
 <h1>Create new user</h1>
-<form action="/new-user/" method="post">
+<form action="." method="post">
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Submit" />
+    <button>Submit</button>
 </form>
-{% endblock content %}
 ```
 
+
 \columnbreak
+
 
 ![model view template](./kickstart-backend/images/model_view_template.pdf)\ 
 
@@ -92,10 +103,12 @@ model
 
 view
 
-:   defines *business logic* of your web app (called *controller* by Rails and others)
+:   defines *business logic* of your web app
+<!--(called *controller* by Rails and others)-->
 
 template
 
-:   is the appearance of your site in HTML (called *view* by Rails and others)
+:   is the appearance of your site in HTML
+<!--(called *view* by Rails and others)-->
 
 
