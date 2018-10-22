@@ -116,16 +116,41 @@ WHERE username = 'janeqhacker';
 
 
 
-# Joins terminology example {-}
+# Joins {-}
 
-Joins combine data from multiple tables. They are categorized into 4
-categories, based on how they do the matching of data between the tables.
-Examples for fetching data from `users` (the *left table*) and `tweets` (the
+![Joins](./kickstart-backend/images/joins.pdf)\ 
+
+
+<!--
+Example textual description for `users` (the *left table*) and `tweets` (the
 *right table*) as below:
+
+LEFT JOIN
+
+:   Include all users, exclude anonymous tweets
+
+RIGHT JOIN
+:   Exclude tweetless users, include anonymous tweets
 
 INNER JOIN
 
 :   Exclude tweetless users, exclude anonymous tweets.
+
+FULL OUTER JOIN
+
+:   Include tweetless users, include anonymous tweets
+-->
+
+# Heroku Postgres {-}
+
+```bash
+heroku addons:create heroku-postgresql:hobby-dev
+heroku pg:psql # Connect to Postgres prompt
+```
+
+<!--
+Example textual description for `users` (the *left table*) and `tweets` (the
+*right table*) as below:
 
 
 LEFT JOIN
@@ -133,14 +158,16 @@ LEFT JOIN
 :   Include all users, exclude anonymous tweets
 
 RIGHT JOIN
-
 :   Exclude tweetless users, include anonymous tweets
 
+INNER JOIN
+
+:   Exclude tweetless users, exclude anonymous tweets.
 
 FULL OUTER JOIN
 
 :   Include tweetless users, include anonymous tweets
-
+-->
 
 
 # Terminology {-}
@@ -153,13 +180,13 @@ SQL
 
 table
 
-:   One grouping of data, consists of columns (the schema) and rows (the data
+:   One grouping of data, consists of columns (the types) and rows (the data
 itself)
 
 
 column
 
-:   Consists of a name and a type
+:   Column of data, consists of a name and a type
 
 
 row
@@ -169,17 +196,25 @@ row
 
 schema
 
-:   refers to the shape of your data -- that is to say, everything but the rows
-
-database
-
-:   Refers to one particular application's data in the your database
+:   Refers to the shape of your data -- that is to say, everything but the rows
 
 
 index
 
-:   Essentially, can be "turned on or off" on a column, makes look-ups which
-filter by that column faster
+:   A feature that can basically be "turned on or off" on a per-column basis,
+makes look-ups which filter by that column faster (but writing to the table a
+little slower)
+
+
+database
+
+:   A collection of tables
+
+
+schema (Postgres)
+
+:    For Postgres in particular, *schema* is also used to mean a grouping of
+tables, e.g. one database can have multiple schemas at once
 
 
 
