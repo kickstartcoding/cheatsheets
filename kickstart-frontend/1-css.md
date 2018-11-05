@@ -121,33 +121,33 @@ Modifier
 \columnbreak
 
 
-# CSS "Pseudos" {-}
+# CSS Pseudo-selectors {-}
 
 \ \ \ \ \ Pseudo-elements
 :   \ 
 
     ```css
-     h1:before {
+    h1:before {
         content: "-";
         color: blue;
-      }
+    }
     ```
 
 
-\ \ \ \ \ Pseudo-selectors
+\ \ \ \ \ Pseudo-classes
 :   \ 
 
     ```css
-      a:hover { color: blue; }
+    a:hover { color: blue; }
 
-      /* First p margin */
-      p:nth-child(1) {
-          margin-left: 10px;
-      }
-      /* Striped table rows */
-      tr:nth-child(odd) {
-          background: gray;
-      }
+    /* First p margin */
+    p:nth-child(1) {
+        margin-left: 10px;
+    }
+    /* Striped table rows */
+    tr:nth-child(odd) {
+        background: gray;
+    }
     ```
 
 # CSS Animation {-}

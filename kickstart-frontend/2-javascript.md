@@ -239,15 +239,16 @@ event
 # Asynchronous Terminology {-}
 
 asynchronous
-:   Instead of pausing (`blocking`) the code for a slow operation, the
-asynchronous approach is to call a function at this later time
+:   Instead of pausing ("blocking") for a slow operation, the asynchronous
+approach is to put-off starting the slow operation, then call a function
+("callback") at a later time to signal it's done
 
 callback
 :   A function passed as an argument to be called later when an event is
 triggered
 
 promise
-:   Another way to do callbacks, with a `.then` syntax
+:   Another popular way to do callbacks, with a `.then` syntax
 
 
 
