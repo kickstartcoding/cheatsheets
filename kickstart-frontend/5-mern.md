@@ -82,7 +82,7 @@ state gets too huge for the App component
 
 # React Redux {-}
 
-![React Redux](./kickstart-frontend/images/small.png)\ 
+![React Redux](./kickstart-frontend/images/reactredux-diagram.pdf)\ 
 
 
 Store
@@ -156,15 +156,17 @@ switch (action.type) {
 
 noSQL database
 
-:    A database that doesn't use SQL and traditional table / row / column organization
+:    A database that doesn't use SQL and traditional table / row / column
+organization
 
 document
 
-:    *row* in SQL, single item of data in NoSQL, represented by BSON (a JSON variant)
+:    *row* in SQL --- an item of data, in BSON (a JSON
+variant)
 
 collection
 
-:    *table* in SQL, group of documents with a name
+:    *table* in SQL --- group of documents (items of data)
 
 
 ObjectID
@@ -183,8 +185,8 @@ db.userprofiles.insertOne({
   posts: [] })
 db.userprofiles.update(
   { name: "janeqhacker" }, {
-    $push: { posts: "Good idea" },
-    $set: { mood: "thoughtful" } })
+    $push: { posts: "Agreed!" },
+    $set: { mood: "happy" } })
 db.userprofiles.deleteOne(
   {name: "janeqhacker"})
 ```
@@ -192,30 +194,41 @@ db.userprofiles.deleteOne(
 
 # Express.js + Mongo {-}
 
-
+<!--
+const express = require("express");
+const app = express();
+-->
 
 ```javascript
-const express = require('express');
 const app = express();
 app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-app.get("/find", (req, res) => {
+  res.send("Hello World!"); });
+app.post("/all", (req, res) => {
   db.collection("userprofiles")
-    .find({name: "janeqhacker"},
-    (err, data) => {
+    .find({})
+    .toArray((err, data) => {
       if (err) throw err;
       res.json(data);
     });
 });
-app.post("/create", (req, res) => {
-  const data = {name: "janeqhacker"};
+app.get("/u/:name", (req,res)=>{
+  const uName = req.params.name;
   db.collection("userprofiles")
-    .insertOne(data,(err,data)=>{
-    /* ...snip... */ });
+    .find({username: uName})
+    .toArray((err, data) => {
+      if (err) throw err;
+      res.json(data);
+    });
+});
+app.post("/create", (req,res) => {
+  const data = {name: "jqhacker"};
+  db.collection("userprofiles")
+    .insertOne(data, (err,data)=>{
+    if (err) throw err;
+    res.json({success: true});
 });
 app.listen(3000, () => {
-  console.log("ready @ :3000");})
+  console.log("ready @ :3000"); });
 ```
 
 

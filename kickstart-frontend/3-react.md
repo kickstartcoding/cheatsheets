@@ -113,7 +113,7 @@ const divOfParagraphs = (
 ```javascript
 import React, { Component } from "react";
 
-// CSS & images can be included magically
+// CSS & images can be included "magically"
 import "./App.css";
 import sendIcon from "./images/envelope.png";
 
@@ -121,7 +121,7 @@ class App extends Component {
     // Define starting state
     state = {
         message: "",
-        users: [],
+        chatLog: []
     };
 
     // Define methods. Must have for forms.
@@ -140,33 +140,28 @@ class App extends Component {
             .then(data => {
                 console.log("Data received:", data);
                 this.setState({
-                    messages: data.messages,
+                    chatLog: data.messages,
                 });
             });
     }
 
     render() {
-        // Any code can go in render() before return
-        const messageParagraphs = [];
-```
+        // Temporary variables and debugging go here
+        let messageCount = this.chatLog.length;
+        console.log("render method", messageCount);
 
-```javascript
-        // Looping "state" data from API
-        for (const m of this.state.messages) {
-            // JS and HTML can be mixed, such as for
-            // building lists of HTML to be included
-            messageParagraphs.push(
-                <p>{m}</p>
-            );
-        }
-```
-
-```
-        // Return what you want visible
+        // Return the JSX of what you want visible
         return (
+```
+
+```html
             <div className="App">
-                <h1>Messenger</h1>
-                {messageParagraphs}
+                <h1>{messageCount} new messages</h1>
+                {
+                    this.state.chatLog.map(text => (
+                        <p>Message: {text}</p>
+                    ))
+                }
                 <input onChange={this.onMessageChange}
                     value={this.state.message} />
                 <button onClick={() => alert("Hi")}>

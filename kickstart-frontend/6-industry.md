@@ -102,8 +102,8 @@ SSH
 
 Docker
 
-:    A *virtualenv* for a Linux system, isolates system dependencies (e.g.
-`apt install`ed for Ubuntu)
+:    Creates *containers* which isolate software and lock-down versions on a
+Linux system (e.g.  anything `apt install`ed on Ubuntu)
 
 
 
