@@ -145,18 +145,14 @@ x = // result of operation
 
 // Strict equality
 expect(x).toBe(42)
-// Strict equality
 expect(x).not.toBe(3)
 // Deep equality
 expect(x).toEqual([1, 2])
-// Deep equality
 expect(x).toEqual({ b: 2 })
 
-// Matches anything true-like
-// e.g. true, "test", 123
+// Anything truthy (true, "test", 123)
 expect(x).toBeTruthy()
-// Matches anything false-like
-// e.g. false, 0, ""
+// Anything falsy (false, 0, "")
 expect(x).toBeFalsy()
 
 // Numbers
@@ -186,10 +182,14 @@ nightmare
 .type("[name=p]", "dog memes")
 .click(".SearchButton")
 .wait("#main")
-.evaluate(() => (
-  document
-    .querySelector("a").href
-))
+.evaluate(() =>
+    document.body.textContent)
+.end()
+.then(text => {
+  // Do Jest tests now
+  expect(text).toContain("doge");
+  done(); // End Jest tests
+});
 ```
 
 
