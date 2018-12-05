@@ -232,7 +232,11 @@ $else$
 $endif$
 
 $if(cheatsheet)$
+$if(topic)$
+\chead{$topic$}
+$else$
 \chead{Week $cheatsheet$ Reference}
+$endif$
 $endif$
 
 \rhead{$cohort$}

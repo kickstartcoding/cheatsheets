@@ -1,32 +1,23 @@
 ---
 title: Kickstart Coding Python
 cheatsheet: Python
+topic: Python
+cohort: Cheatsheet
 ...
 
 # Types {-}
 
-str
+str, int, float
 :   \ 
 
     ```python
-    a = "hello!"
-    a.upper()       # HELLO!
-    a.capitalize()  # Hello!
-    a.strip("!")    # hello
-    a.index("e")    # 2
-    a.split("e") # ["h", "llo!"]
-    ```
-
-number types
-:   \ 
-
-    ```python
-    count = 3  # int
-    pi = 3.14  # float
+    a = "hello!"    # string
+    count = 3       # integer
+    pi = 3.14       # float
     ```
 
 list
-:   \ 
+:   ordered collection
 
     ```python
     a = ["a", "b", 3]
@@ -45,7 +36,7 @@ tuple
     ```
 
 dict
-:   \ 
+:   collection of keys and values
 
     ```python
     a = {"test": 1, "b": "hello"}
@@ -56,13 +47,27 @@ dict
     ```
 
 sets
-:   same as dicts, but no values & can do arithmetic
+:   "keys-only dict", with operations
 
     ```python
     a = {"a", 1, 4, "b"}
     b = {"a", "b"}
     print(a - b)  #  {1, 4}
     ```
+
+<!--
+str methods
+:   \ 
+
+    ```python
+    a = "hello!"
+    a.upper()       # HELLO!
+    a.capitalize()  # Hello!
+    a.strip("!")    # hello
+    a.index("e")    # 2
+    a.split("e") # ["h", "llo!"]
+    ```
+-->
 
 list methods
 :   \ 
@@ -85,9 +90,10 @@ dict methods
     a.items()  # ... of both
     ```
 
+
 # Input/Output {-}
 
-Prompting user
+Prompt user
 :   \ 
 
     ```python
@@ -95,16 +101,16 @@ Prompting user
     print("Hi ", name)
     ```
 
-Reading text from file
-:   \ 
+Read from file
+:   and convert to `str`
 
     ```python
     a = open("file.txt").read()
-    print("file1.txt has: ", a)
+    print("data:", a.decode("utf-8"))
     ```
 
-Writing to file
-:   \ 
+Write to file
+:    creating if none
 
     ```python
     a = "Some text for o.txt"
@@ -116,7 +122,7 @@ Writing to file
 # Branching {-}
 
 Basic if
-:   Optionally execute indented code based on the truth value of the condition
+:   Conditionally execute indent
 
     ```python
     if cost < 10:
@@ -139,8 +145,6 @@ If-elif-else
     ```python
     if beer == "Darkwing":
         print("IPA")
-    elif beer == "Hefe":
-        print("Hefeweizen")
     elif beer == "Stonehenge":
         print("Stout")
     else:
@@ -160,25 +164,6 @@ Pass
 
 # Iteration {-}
 
-For loop
-:   Execute the indented code for each item in a list or other "iterable",
-temporarily putting that item in a given variable
-
-
-    ```python
-    names = ["John", "Paul", "G"]
-    for name in names:
-        print("name:", name)
-    ```
-
-Range for-loop
-:   Useful for looping through numbers
-
-    ```python
-    for x in range(0, 100):
-        print("x:", x)
-    ```
-
 While loop
 :   Repeat indented code until condition is no longer true
 
@@ -189,19 +174,33 @@ While loop
         i = i ** 2
     ```
 
-Interruption
-:   Exit loops prematurely with `break`, skip to next iteration with `continue`
+For loop
+:   Repeat for each item in iterable
+
 
     ```python
-    for i in range(0, 50):
-        choice = input("quit/skip? ")
-        if choice == "quit":
-            break
-        elif choice == "skip":
-            continue
-        print("i", i, "i^2", i ** 2)
+    names = ["John", "Paul", "G"]
+    for name in names:
+        print("name:", name)
+    for x in range(0, 100):
+        print("x:", x)
     ```
 
+List comprehension
+:   Create a new list while looping
+
+    ```python
+    names = ["John", "Paul", "G"]
+    long_names = [
+        n.lower() for n in names
+        if len(n) > 2
+    ]   # = ["john", "paul"]
+    ```
+
+
+
+Interruption
+:   Exit loops prematurely with `break`, skip to next iteration with `continue`
 
 
 \columnbreak
@@ -209,14 +208,15 @@ Interruption
 
 # Functions {-}
 
-Positional parameters
-:   \ 
+Return value
+:   w/ positional param
 
     ```python
-    def add(a, b):
-        c = a + b
-        print("the sum is", c)
-    add(1, 2)
+    def in_file(name):
+        path = "./src/" + name
+        return path + ".html"
+    path = in_file("home")
+    html = open(path).read()
     ```
 
 Keyword parameters
@@ -228,15 +228,15 @@ Keyword parameters
     greet(name="Jill")
     ```
 
-Return value
+
+Variable length arguments
 :   \ 
 
     ```python
-    def in_file(name):
-        path = "./src/" + name
-        return path + ".html"
-    path = in_file("home")
-    html = open(path).read()
+    def do_all(*args, **kwargs):
+        print(kwargs) # kwargs is dict
+        return sum(args)
+    do_all(3, 5, b=3)
     ```
 
 Comment
@@ -261,4 +261,52 @@ Lambda
     cubed = lambda i: i ** 3
     print("5^3 is ", cubed(5))
     ```
+
+
+# More {-}
+
+
+Try / except
+:   Handle or ignore errors.
+
+    ```python
+    try: big_number = 1 / 0
+    except Exception as e:
+        print("It broke:", e)
+    ```
+
+
+With
+:   Execute code in a context
+
+    ```python
+    with open("file.txt") as f:
+        f.write("test")
+    ```
+
+
+Unpacking assignment
+:   Assign to two or more, good for loops
+
+    ```python
+    x, y = [35, 15]
+    pairs = [(10, 5), (8, 100)]
+    for left, right in pairs:
+        print(left * right)
+    ```
+
+
+<!--
+sets
+:   like dicts, but no values. can do arithmetic.
+
+    ```python
+    a = {"a", 1, 4, "b"}
+    b = {"a", "b"}
+    print(a - b)  #  {1, 4}
+    ```
+-->
+
+
+
 

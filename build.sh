@@ -10,8 +10,8 @@ cd $MY_PATH
 FILTER="$1"
 
 function pandoc_build() {
-    local $*
     COHORT="2018-Fall"
+    local $*
     TEMPLATE="$MY_PATH/templates/cheatsheet.latex"
 
     # Provides the option of selecting only certain cheatsheets 
@@ -57,6 +57,7 @@ pandoc_build name="7-algorithms"
 
 IN="topical"
 OUT="build/topical"
-pandoc_build name="py-es6"
+COHORT="Cheatsheet"
+pandoc_build name="javascript-for-pythonistas"
 pandoc_build name="python"
 
