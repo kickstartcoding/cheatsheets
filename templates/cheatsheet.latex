@@ -206,12 +206,22 @@ $endif$
 \fancyfoot{}
 
 $if(headergfx)$
-\geometry{headheight = 0.6in}
-\lhead{\includegraphics[height=0.5in, keepaspectratio=true]{./syllabus/images/letterhead.pdf}}
+\geometry{headheight = 0.5in}
+\lhead{\includegraphics[height=0.5in, keepaspectratio=true]{./templates/letterhead.pdf}}
 \rhead{ {\fontfamily{cmss}\selectfont {\large \uppercase{$title$}} } }
+$if(topic)$
+\lfoot{$topic$}
+$else$
 \lfoot{$cohort$}
+$endif$
+
 \cfoot{kickstartcoding.com}
+
+$if(topic)$
+\rfoot{$topic$}
+$else$
 \rfoot{\thepage}
+$endif$
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.4pt}
 $else$

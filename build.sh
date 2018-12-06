@@ -59,5 +59,6 @@ IN="topical"
 OUT="build/topical"
 COHORT="Cheatsheet"
 pandoc_build name="javascript-for-pythonistas"
+pandoc_build name="python-for-js-developers"
 pandoc_build name="python"
 
