@@ -2,6 +2,8 @@
 title: Modern Javascript for Pythonistas
 cheatsheet: JavaScript
 topic: JavaScript (ES6)
+headergfx: true
+credits: true
 ...
 
 # Python {-}

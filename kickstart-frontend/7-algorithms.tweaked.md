@@ -4,17 +4,62 @@ cheatsheet: 7
 ...
 
 
-# "Algo Toolbox" Training {-}
+
+
+# Techniques for solving {-}
+
+**Poyla's 4 Steps**
+
+**1** Understand the problem
+
+**2** Devise a plan
+
+**3** Carry it out
+
+**4** Verify & review
+
+**The "Algo Toolbox" Method**
+
+**1 See the Data** - numbers behind the words
+
+**2 Multiple Passes** - simplify & modify into more familiar problems
+
+**3 Problem & Data Toolbox** - prepare a problems you've solved before
 
 
 
-1. See the Data - *algo question = numbers and data* - The words and "theme" is
-a trap... only see data and numbers
+# Terminology {-}
 
-2. Multiple Passes - *simplify & modify into more familiar problems*
+<!--
+Problem
 
-3. Problem & Data Type Toolbox - *train by practice / memorize*
+:    Given an input of a certain type, make an output (solution)
+-->
 
+Algorithm
+
+:    A precise series of steps that solves a problem --- sometimes
+distinguished from the **implementation** code.
+
+
+Time complexity
+
+:    *speed* - "Given a problem input of size *n*, how many steps
+does algo take to solve?"
+
+Big O
+
+:    Notation for time complexity
+
+
+Abstract Data Types
+
+:    Ways to structure data, defined in English, useful to model data
+
+
+Data structures
+
+:    Implementations with code of an ADT, used to implement algorithms
 
 
 # ADT Toolbox {-}
@@ -57,7 +102,7 @@ pivot into two partitions, sort each partition using quicksort (another pivot)
 
 mergesort
 
-:    *time avg O(n log n) - space O(n)* - split, sort each array using
+:    *time avg O(n log n) - space O(n)* - split, sort each half array using
 mergesort (smaller arrays), combine sorted arrays in order
 
 
@@ -74,8 +119,10 @@ portion, then repeat for next smallest in unsorted
 
 bubblesort
 
-:    *time avg O(n^2^)  - space O(1)* - keep on swapping adjacent items, until
-you go through the array with no more items needing to be swapped
+:    *time avg O(n^2^)  - space O(1)* - keep on swapping adjacent items as
+needed, until done
+
+<!--no longer needed (every pair is sorted)-->
 
 
 # Problem Toolbox  {-}
@@ -219,6 +266,10 @@ graph = {
 
 
 
+
+
+
+
 # Terminology {-}
 
 Poyla's 4 Steps
@@ -260,4 +311,22 @@ Abstract Data Types
 Data structures
 
 :    Implementations with code of an ADT, used to implement algorithms
+
+
+
+
+
+
+
+# Techniques {-}
+
+
+
+1. See the Data - *algo question = numbers and data, everything is a datatype*
+
+2. Multiple Passes - *simplify & modify into more familiar problems*
+
+3. Problem Toolbox
+
+4. Data Type Toolbox
 

@@ -1,9 +1,11 @@
 ---
-title: Kickstart Coding Python
+title: Python
 cheatsheet: Python
-topic: Python
-cohort: Cheatsheet
+topic: Python (3 and later)
+headergfx: true
+credits: true
 ...
+
 
 # Types {-}
 
