@@ -13,16 +13,19 @@ function pandoc_build() {
     COHORT="2018-Fall"
     local $*
     TEMPLATE="$MY_PATH/templates/cheatsheet.latex"
+    IN_PATH="$IN/$name.md"
 
-    # Provides the option of selecting only certain cheatsheets 
-    if [ -n "$FILTER" ] && [[ ! $name =~ "$FILTER" ]]; then
+    #################################
+    # Provides the option of selecting only certain cheatsheets
+    # If we specify a path instead of a search param, lets check for that too (used by entr)
+    if [ -n "$FILTER" ] && [[ ! $name =~ "$FILTER" ]] && [[ ! "$FILTER" -ef "$IN_PATH" ]]; then
         return
     fi
 
     echo "$name  ->  $OUT/$name.pdf"
     pandoc\
         -f markdown\
-        "$IN/$name.md"\
+        "$IN_PATH"\
         --variable=cohort:$COHORT\
         -t latex\
         --template "$TEMPLATE"\
@@ -31,6 +34,11 @@ function pandoc_build() {
         -o "$OUT/$name.pdf"
 }
 
+if [ -n "$FILTER" ] && [ $FILTER = "--watch" ]; then
+    echo "Entering watch mode..."
+    ls **/*$2.md | entr -p ./build.sh /_
+    exit 0
+fi
 
 IN="kickstart-backend"
 OUT="build/kickstart-backend"
@@ -61,4 +69,5 @@ COHORT="Cheatsheet"
 pandoc_build name="javascript-for-pythonistas"
 pandoc_build name="python-for-js-developers"
 pandoc_build name="python"
+pandoc_build name="modern-html-css"
 

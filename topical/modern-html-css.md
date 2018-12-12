@@ -6,7 +6,15 @@ headergfx: true
 credits: true
 ...
 
+
+
+# Box model {-}
+
+![CSS Rule](./kickstart-frontend/images/box_model_diagram.pdf)\ 
+
 # Common HTML Tags {-}
+
+![HTML tag](./kickstart-backend/images/anatomy_of_tag_cmu.pdf)\ 
 
 Paragraph
 :   \ 
@@ -30,7 +38,7 @@ Image
     <img src="image.jpg" />
     ```
 
-Link
+Link *"anchor"*
 :   \ 
 
     ```html
@@ -60,27 +68,19 @@ Semantic
 
 Comment
 
-:   Ignored by computer, but readable for humans.
-    Useful for adding notes or temporarily removing
-    parts of your code.
+:   \ 
 
     ```html
     <!-- This will be ignored! -->
     ```
 
 
-# HTML Tag Diagram {-}
-
-![HTML tag](./kickstart-backend/images/anatomy_of_tag_cmu.pdf)\ 
-
-# CSS Rule Diagram {-}
-
-![CSS Rule](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
-
 \columnbreak
 
-# Common CSS Styles {-}
+# CSS Examples {-}
 
+
+![CSS Rule](./kickstart-backend/images/anatomy_of_css_cmu.pdf)\ 
 
 
 Text
@@ -120,6 +120,24 @@ Block styling
     }
     ```
 
+
+# CSS Animation {-}
+
+
+Animation & transition
+:   \ 
+
+    ```css
+    .Link {
+        transition: color 1s,
+                    padding-left 3s;
+    }
+    .Link:hover {
+        color: green;
+        padding-left: 20px;
+    }
+    ```
+
 Positioning & display tricks
 :   \ 
 
@@ -135,41 +153,6 @@ Positioning & display tricks
 
     /* Stack adjacently */
     .c { display: inline-block; }
-    ```
-
-# Common CSS Selectors {-}
-
-Tag
-:   \ 
-
-    ```css
-    div { color: blue; }
-    ```
-
-Class
-:   \ 
-
-    ```css
-    .class-name { color: blue; }
-    ```
-
-ID
-:   \ 
-
-    ```css
-    #id_name { color: blue; }
-    ```
-
-Containment
-:   \ 
-
-    ```css
-    /* Match all divs in #a */
-    #a div { color: blue; }
-    /* Divs immediately in #b */
-    #b > div { color: blue; }
-    /* Wildcard: match all in #c */
-    #c > * { color: blue; }
     ```
 
 \columnbreak
@@ -199,6 +182,53 @@ Use `display: grid` and specify columns/rows.
 .ChildElement {
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
+}
+```
+
+
+# CSS Selectors {-}
+
+**Tag** \ \ \ `div { color: blue; }`{.css}
+
+**Class** `.class-name { color: blue; }`{.css}
+
+**ID** \ \ \ \ `#id_name { color: blue; }`{.css}
+
+Containment
+:   \ 
+
+    ```css
+    /* Match all divs in #a */
+    #a div { color: blue; }
+    /* Divs immediately in #b */
+    #b > div { color: blue; }
+    /* Wildcard: match all in #c */
+    #c > * { color: blue; }
+    ```
+
+
+Pseudo-elements
+:   \ 
+
+```css
+h1:before {
+    content: "-";
+    color: blue;
+}
+```
+
+
+Pseudo-classes
+:   \ 
+
+```css
+/* First p margin */
+p:nth-child(1) {
+    margin-left: 10px;
+}
+/* Striped table rows */
+tr:nth-child(odd) {
+    background: gray;
 }
 ```
 

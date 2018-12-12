@@ -4,12 +4,12 @@ cheatsheet: 7
 ...
 
 
-# "Algo Toolbox" Training {-}
+# Technique {-}
 
 
 
 1. See the Data - *algo question = numbers and data* - The words and "theme" is
-a trap... only see data and numbers
+a trap, only see data and numbers
 
 2. Multiple Passes - *simplify & modify into more familiar problems*
 
