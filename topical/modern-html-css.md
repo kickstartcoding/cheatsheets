@@ -1,16 +1,11 @@
 ---
-title: HTML & CSS
+title: HTML & CSS (2018)
 cheatsheet: HTML and CSS
 topic: Modern HTML (2018)
 headergfx: true
 credits: true
 ...
 
-
-
-# Box model {-}
-
-![CSS Rule](./kickstart-frontend/images/box_model_diagram.pdf)\ 
 
 # Common HTML Tags {-}
 
@@ -38,8 +33,8 @@ Image
     <img src="image.jpg" />
     ```
 
-Link *"anchor"*
-:   \ 
+Link
+:    (aka *"anchor"*)
 
     ```html
     <a href="http://google.com/">
@@ -58,12 +53,12 @@ Headers
 Freeform
 :   \ 
 
-     `<div></div>` (block) and `<span></span>` (inline)
+     `<div></div>`{.html} (block) and `<span></span>`{.html} (inline)
 
 Semantic
 :   \ 
 
-     `<section>`, `<article>`, and many more
+     `<section>`{.html}, `<article>`{.html}, and more
 
 
 Comment
@@ -71,82 +66,13 @@ Comment
 :   \ 
 
     ```html
-    <!-- This will be ignored! -->
-    ```
-
-\columnbreak
-
-# Grid Container {-}
-
-<!--
-Use `display: grid` and specify columns/rows.
--->
-
-![Grid Example](./kickstart-frontend/images/grid_template_example.pdf)\ 
-
-```css
-.Container {
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-  grid-template-rows: 50px auto 90px;
-}
-```
-
-# Grid Child Positioning {-}
-
-<!--
-*Optional:* Child elements can be custom positioned and sized.
--->
-
-![Grid Example](./kickstart-frontend/images/grid_child_example.pdf)\ 
-
-```css
-.ChildElement {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-}
-```
-
-
-# CSS Selectors {-}
-
-**Tag** \ \ \ `div { color: blue; }`{.css}
-
-**Class** `.class-name { color: blue; }`{.css}
-
-**ID** \ \ \ \ `#id_name { color: blue; }`{.css}
-
-Containment
-:   \ 
-
-    ```css
-    /* Match all divs in #a */
-    #a div { color: blue; }
-    /* Divs immediately in #b */
-    #b > div { color: blue; }
-    /* Wildcard: anything in #c */
-    #c > * { color: blue; }
+    <!-- Ignored text -->
     ```
 
 
-Pseudo-elements
-:   \ 
+# Box model {-}
 
-```css
-h1:before { content: "-"; }
-```
-
-
-Pseudo-classes
-:   \ 
-
-```css
-/* First p margin */
-p:nth-child(1) { margin: 10px; }
-/* Striped table rows */
-tr:nth-child(odd) { color: gray; }
-```
-
+![CSS Rule](./kickstart-frontend/images/box_model_diagram.pdf)\ 
 
 \columnbreak
 
@@ -159,72 +85,145 @@ tr:nth-child(odd) { color: gray; }
 Text
 :  \ 
 
-    ```css
-    p {
-        font-size: 16pt;
-        text-align: center;
-        color: green;
-        font-family: "Arial";
-        font-weight: bold;
-        line-height: 20px;
-    }
-    ```
+```css
+p {
+    font-size: 16pt;
+    text-align: center;
+    color: green;
+    font-family: "Arial";
+    font-weight: bold;
+    line-height: 20px;
+}
+```
 
 Sizing
 :   \ 
 
-    ```css
-    div {
-        height: 30px;
-        width: 100%;
-        margin-left: 20px;
-        padding-top: 10px;
-    }
-    ```
+```css
+div {
+    height: 30px;
+    width: 100%;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+```
 
 Block styling
 :   \ 
 
-    ```css
-    span {
-        background: yellow;
-        border: 2px dotted green;
-        border-radius: 10px;
-    }
-    ```
+```css
+.highlighted-area {
+    display: block;
+    box-sizing: border-box;
+    background: yellow;
+    border: 2px dotted green;
+    border-radius: 10px;
+}
+```
 
 
-# CSS Animation {-}
+Transition
+:   (animates properties)
+
+```css
+.fading-link {
+    transition: color 1s,
+                padding-left 3s;
+}
+.fading-link:hover {
+    color: green;
+    padding-left: 20px;
+}
+```
+
+# CSS Display {-}
+
+block
+:   fill available width, word-wrap inline children (e.g. paragraph)
+
+inline
+:   word-wrap (e.g. strong)
+
+inline-block
+:   square block within word-wrapped text (e.g. emoji or icon)
+
+flex
+:   line up children, control spacing
+
+grid
+:   position children in grid
 
 
-Animation & transition
-:   \ 
+\columnbreak
 
-    ```css
-    .Link {
-        transition: color 1s,
-                    padding-left 3s;
-    }
-    .Link:hover {
-        color: green;
-        padding-left: 20px;
-    }
-    ```
+# CSS Selectors {-}
 
-Positioning & display tricks
-:   \ 
+**Tag** \ \ \ `div { color: blue; }`{.css}
 
-    ```css
-    /* Image floating in text */
-    img { float: left; }
+**Class** `.class-name { color: blue; }`{.css}
 
-    /* Display as wide block*/
-    .a { display: block; }
+**ID** \ \ \ \ `#id_name { color: blue; }`{.css}
 
-    /* Wrap inline with text */
-    .b { display: inline; }
+Containment
+:   (match children)
 
-    /* Stack adjacently */
-    .c { display: inline-block; }
-    ```
+```css
+/* Match all divs in #a */
+#a div { color: blue; }
+/* Divs immediately in #b */
+#b > div { color: blue; }
+/* Wildcard: anything in #c */
+#c > * { color: blue; }
+```
+
+
+Pseudo-elements
+:   (add content)
+
+```css
+h1:before { content: "-"; }
+```
+
+
+Pseudo-classes
+:   (match by position)
+
+```css
+/* First p margin */
+p:nth-child(1) { margin: 10px; }
+/* Striped table rows */
+tr:nth-child(odd) { color: gray; }
+```
+
+
+# Grid Container {-}
+
+<!--
+Use `display: grid` and specify columns/rows.
+-->
+
+![Grid Example](./kickstart-frontend/images/grid_template_example.pdf)\ 
+
+```css
+.container-element {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 50px auto 90px;
+}
+```
+
+# Grid Child Positioning {-}
+
+<!--
+*Optional:* Child elements can be custom positioned and sized.
+-->
+
+![Grid Example](./kickstart-frontend/images/grid_child_example.pdf)\ 
+
+```css
+.child-element {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+```
 

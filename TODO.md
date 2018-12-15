@@ -1,4 +1,3 @@
-
 Need to-do before FOSS launch:
 
 * Create Django cheatsheet

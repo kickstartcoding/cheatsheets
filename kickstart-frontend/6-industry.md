@@ -72,7 +72,7 @@ the process to achieve *"continuous deployment"*
 
 # Server Topology{-}
 
-![server Topology](./kickstart-frontend/images/server_topography.pdf)\ 
+![server Topology](./kickstart-frontend/images/server_topology.pdf)\ 
 
 
 # Encryption  {-}
