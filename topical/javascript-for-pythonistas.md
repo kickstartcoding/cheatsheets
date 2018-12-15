@@ -1,10 +1,12 @@
 ---
-title: Modern Javascript for Pythonistas
+title: Modern JS for Pythonistas
 cheatsheet: JavaScript
 topic: JavaScript (ES6)
 headergfx: true
 credits: true
 ...
+
+
 
 # Python {-}
 
@@ -30,7 +32,7 @@ for name in names:
 x = 0
 while x < 3:
     print("X:", x)
-    x = x + 1
+    x += 1
 
 # If-statements
 if full_name == "Jane":
@@ -40,68 +42,42 @@ elif full_name == "Alice":
 else:
     print("Don't know you")
 
-# Looping through dict
-for k, v in translation.items():
-    print(key, value)
-
-
+# List comprehension
+long_names = [
+    name.upper() for name in names
+    if len(name) > 3
+]
 
 # Functions
 def greeter(name):
     print("Hi", name)
 greeter("Bob")
 
-
 # Lambda function
 dst = lambda x, y: x*x + y*y
+
 
 # Conjunctions
 if age < 18 and drink == "beer":
     print("Too young kiddo")
+
 if age > 18 or drink == "soda":
     print("Great choice")
-
 
 # Class syntax
 class User(BaseUser):
     def __init__(self, name):
         self.name = name
         self.logged_in = False
+
     def log_in(self):
         self.logged_in = True
-user = User("janeqhacker")
 
 
 
-
+user = User("jqhacker")
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \columnbreak
 
@@ -139,18 +115,18 @@ if (fullName === "Jane") {
 } else {
     console.log("Don't know you");
 }
-// Looping through object
-for (const [k, v] of
-    Object.entries(translation)) {
-  console.log(key, value);
-}
+// Array processing (map & filter)
+let longNames = names
+    .filter(n => n.length > 3)
+    .map(n => n.toUpperCase());
+
 // Functions
 function greeter(name) {
     console.log("Hi", name);
 }
-greeter("Bob")
+greeter("Bob");
 
-// Lambda function
+// Arrow function expression
 const dst = (x, y) => x*x + y*y;
 
 // Conjunctions
@@ -170,11 +146,40 @@ class User extends BaseUser {
         this.loggedIn = true;
     }
 }
-let user = new User("janeqhacker");
+let user = new User("jqhacker");
+
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \columnbreak
+
+
 
 
 # Collection operations {-}

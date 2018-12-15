@@ -206,7 +206,7 @@ $endif$
 \fancyfoot{}
 
 $if(headergfx)$
-\geometry{headheight = 0.5in}
+\geometry{headheight = 0.25in}
 \lhead{\includegraphics[height=0.5in, keepaspectratio=true]{./templates/letterhead.pdf}}
 \rhead{ {\fontfamily{cmss}\selectfont {\large \uppercase{$title$}} } }
 $if(topic)$
@@ -217,8 +217,8 @@ $endif$
 
 \cfoot{kickstartcoding.com}
 
-$if(topic)$
-\rfoot{$topic$}
+$if(credits)$
+\rfoot{A cheatsheet by Kickstart Coding}
 $else$
 \rfoot{\thepage}
 $endif$

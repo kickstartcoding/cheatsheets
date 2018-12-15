@@ -74,6 +74,79 @@ Comment
     <!-- This will be ignored! -->
     ```
 
+\columnbreak
+
+# Grid Container {-}
+
+<!--
+Use `display: grid` and specify columns/rows.
+-->
+
+![Grid Example](./kickstart-frontend/images/grid_template_example.pdf)\ 
+
+```css
+.Container {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 50px auto 90px;
+}
+```
+
+# Grid Child Positioning {-}
+
+<!--
+*Optional:* Child elements can be custom positioned and sized.
+-->
+
+![Grid Example](./kickstart-frontend/images/grid_child_example.pdf)\ 
+
+```css
+.ChildElement {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+```
+
+
+# CSS Selectors {-}
+
+**Tag** \ \ \ `div { color: blue; }`{.css}
+
+**Class** `.class-name { color: blue; }`{.css}
+
+**ID** \ \ \ \ `#id_name { color: blue; }`{.css}
+
+Containment
+:   \ 
+
+    ```css
+    /* Match all divs in #a */
+    #a div { color: blue; }
+    /* Divs immediately in #b */
+    #b > div { color: blue; }
+    /* Wildcard: anything in #c */
+    #c > * { color: blue; }
+    ```
+
+
+Pseudo-elements
+:   \ 
+
+```css
+h1:before { content: "-"; }
+```
+
+
+Pseudo-classes
+:   \ 
+
+```css
+/* First p margin */
+p:nth-child(1) { margin: 10px; }
+/* Striped table rows */
+tr:nth-child(odd) { color: gray; }
+```
+
 
 \columnbreak
 
@@ -154,81 +227,4 @@ Positioning & display tricks
     /* Stack adjacently */
     .c { display: inline-block; }
     ```
-
-\columnbreak
-
-
-# Grid Container {-}
-
-Use `display: grid` and specify columns/rows.
-
-![Grid Example](./kickstart-frontend/images/grid_template_example.pdf)\ 
-
-```css
-.Container {
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-  grid-template-rows: 50px auto 90px;
-}
-```
-
-# Grid Child Positioning {-}
-
-*Optional:* Child elements can be custom positioned and sized.
-
-![Grid Example](./kickstart-frontend/images/grid_child_example.pdf)\ 
-
-```css
-.ChildElement {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-}
-```
-
-
-# CSS Selectors {-}
-
-**Tag** \ \ \ `div { color: blue; }`{.css}
-
-**Class** `.class-name { color: blue; }`{.css}
-
-**ID** \ \ \ \ `#id_name { color: blue; }`{.css}
-
-Containment
-:   \ 
-
-    ```css
-    /* Match all divs in #a */
-    #a div { color: blue; }
-    /* Divs immediately in #b */
-    #b > div { color: blue; }
-    /* Wildcard: match all in #c */
-    #c > * { color: blue; }
-    ```
-
-
-Pseudo-elements
-:   \ 
-
-```css
-h1:before {
-    content: "-";
-    color: blue;
-}
-```
-
-
-Pseudo-classes
-:   \ 
-
-```css
-/* First p margin */
-p:nth-child(1) {
-    margin-left: 10px;
-}
-/* Striped table rows */
-tr:nth-child(odd) {
-    background: gray;
-}
-```
 

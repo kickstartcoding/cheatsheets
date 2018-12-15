@@ -6,6 +6,7 @@ headergfx: true
 credits: true
 ...
 
+
 # JavaScript {-}
 
 ```javascript
@@ -49,7 +50,7 @@ let longNames = names
 function greeter(name) {
     console.log("Hi", name);
 }
-greeter("Bob")
+greeter("Bob");
 
 // Arrow function expression
 const dst = (x, y) => x*x + y*y;
