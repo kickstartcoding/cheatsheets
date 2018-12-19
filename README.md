@@ -1,9 +1,8 @@
-![Logo](./templates/letterhead.png)
+![Kickstart Coding Logo](./templates/logo.png)
 
 # Kickstart Cheatsheets
 
-
-A variety of Cheatsheets, optimized to look good when printed, but usable on a screen also.
+**A selection of printable, one-page cheatsheets.**
 
 These were originally designed for Kickstart Coding, the affordable, inclusive,
 and intensive coding course teaching cutting-edge Python / Django and
@@ -60,17 +59,16 @@ following cheatsheet to use as a reference.
 
 # Contributing
 
-* **How it's built**: These cheatsheets are written in Markdown, converted into
-<style>.latex sub,.latex sup,.tex sub{text-transform:uppercase}.latex sub,.tex sub{vertical-align:-.5ex;margin-left:-.1667em;margin-right:-.125em}.latex,.latex sub,.tex,.tex sub{font-size:1em}.latex sup{font-size:.85em;vertical-align:.15em;margin-left:-.36em;margin-right:-.15em}</style>
-<span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> using [pandoc](https://pandoc.org/), which then generates attractive
-  PDFs from the LaTeX using the (very messy) template found in
-  `templates/template.tex`. All this is tied together using the Bash script
+* **How it's built**: These cheatsheets are written originally in Markdown,
+  converted into LaTeX using [pandoc](https://pandoc.org/) and a custom
+  [pandoc LaTeX template](./templates/template.text) (very messy), and then
+  generates the PDF.  All this is tied together using the Bash script
   [build.sh](./build.sh).
 
-* **Writing your own**: Want to write your own? It's easy, as long as you know
-  Markdown! Look at the existing `.md` source files for ideas, then follow the
-  [DEVELOPMENT.md](./DEVELOPMENT.md) for instructions on how to re-build the
-  PDFs yourself.
+* **Writing your own**: Want to write your own printable coding cheatsheets?
+  It's easy, as long as you know Markdown! Look at the existing `.md` source
+  files for ideas, then follow the [DEVELOPMENT.md](./DEVELOPMENT.md) for
+  instructions on how to re-build the PDFs yourself.
 
 * **License**: These cheatsheets and the scripts involved with their build
   process are (C) Kickstart Coding and released under the GPL 3.0
