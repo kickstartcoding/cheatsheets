@@ -4,9 +4,6 @@ Need to-do before FOSS launch:
 
 * Create react cheat-sheet (includes Redux diagram)
 
-* I THINK DONE: Need to redo as cleaner SVG `sql_joins_needs_replacement.png`
-  (also, simplify probably and have consistent examples)
-
 * Bash CLI and Git cheatsheet
 
 ----

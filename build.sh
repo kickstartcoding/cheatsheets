@@ -36,7 +36,7 @@ function pandoc_build() {
 
 if [ -n "$FILTER" ] && [ $FILTER = "--watch" ]; then
     echo "Entering watch mode..."
-    ls **/*$2.md | entr -p ./build.sh /_
+    ls $2.md | entr -p ./build.sh /_
     exit 0
 fi
 
@@ -70,4 +70,5 @@ pandoc_build name="javascript-for-pythonistas"
 pandoc_build name="python-for-js-developers"
 pandoc_build name="python"
 pandoc_build name="modern-html-css"
+pandoc_build name="django"
 
