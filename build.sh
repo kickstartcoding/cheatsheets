@@ -9,8 +9,9 @@ cd $MY_PATH
 
 FILTER="$1"
 
+LINKS_OUT="CHEATSHEETS.md"
+
 function pandoc_build() {
-    COHORT="2018-Fall"
     local $*
     TEMPLATE="$MY_PATH/templates/cheatsheet.latex"
     IN_PATH="$IN/$name.md"
@@ -32,6 +33,22 @@ function pandoc_build() {
         --latex-engine pdflatex\
         --toc-depth 1\
         -o "$OUT/$name.pdf"
+
+    if [ -x "$(command -v convert)" ]; then
+        convert "$OUT/$name.pdf" -background "#FFFFFF" -resize 350x -flatten "$OUT/$name.thumb.jpg" 
+        convert -density 300 "$OUT/$name.pdf" -resize 50% -flatten "$OUT/$name.jpg" 
+    fi
+
+
+    ## Handle creating the LINKS.md markdown file (only when building all)
+    if ! [ -n "$FILTER" ]; then
+        echo "
+### $name
+
+[![$name PDF thumbnail](./$OUT/$name.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/$OUT/$name.pdf)
+" >> "$LINKS_OUT"
+    fi
+
 }
 
 if [ -n "$FILTER" ] && [ $FILTER = "--watch" ]; then
@@ -40,6 +57,19 @@ if [ -n "$FILTER" ] && [ $FILTER = "--watch" ]; then
     exit 0
 fi
 
+
+## Handle creating the LINKS.md markdown file (only when building all)
+if ! [ -n "$FILTER" ]; then
+    echo "
+# Cheatsheets
+
+Click on one of the following thumbnails to download one of our cheatsheets.
+
+" > "$LINKS_OUT"
+fi
+
+
+COHORT="2019-Winter"
 IN="kickstart-backend"
 OUT="build/kickstart-backend"
 pandoc_build name="1-html-css"
@@ -71,4 +101,5 @@ pandoc_build name="python-for-js-developers"
 pandoc_build name="python"
 pandoc_build name="modern-html-css"
 pandoc_build name="django"
+pandoc_build name="cli-bash"
 
