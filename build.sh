@@ -102,4 +102,5 @@ pandoc_build name="python"
 pandoc_build name="modern-html-css"
 pandoc_build name="django"
 pandoc_build name="cli-bash"
+pandoc_build name="react-redux"
 

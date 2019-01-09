@@ -10,43 +10,33 @@ credits: true
 twocolumns: true
 -->
 
-# Terminology {-}
+![model view template](./topical/images/model_view_template.pdf)\ 
 
-MVC
+# Routing {-}
 
-:   *Model-View-Controller* is the "keep stuff separate" philosophy to
-separate out the code in a complicated web apps into 3 different categories
+```python
+from django.urls import path, include
+from myapp import views
+from accounts import views as a_views
 
-ORM
+urlpatterns = [
+    path("/", views.welcome_page),
+    path("/u/<int:uid>/", views.upage),
+    include("accounts/", a_views),
+]
+```
 
-:   *Object Relational Mapper* - the library used by the model to make special
-classes (called *models*) that can be saved and retrieved from the database
-(that is to say, *persisted*). Works by generating SQL.
+\columnbreak
 
-
-migration
-
-:   Auto-generated code that uses the ORM to get the database sync'ed up with
-the latest additions to a project's models.
-
-applying migration
-
-:   Using a *migration* to get the DB up-to-date and ready for use.
+# ORM: QuerySets {-}
 
 
-
-MVT
-
-:   *Model-View-Template* are the three categories of code in a Django project
-
-
-app
-
-:   A single Django-powered *project* can consist of multiple *apps*, where
-each app can have a full vertical "slice" of models, views, and templates.
-
-# Using Django forms {-}
-
+```python
+Entry.objects\
+    .filter(col="val")\
+    .exclude(c2="v2")\
+    .order_by("date")
+```
 
 **models.py**
 
@@ -100,20 +90,54 @@ def person_create(request):
 \columnbreak
 
 
-![model view template](./topical/images/model_view_template.pdf)\ 
 
-model
 
-:   is the gate-keeper to data stored in the *database*
+# Templates {-}
 
-view
+variables
+:   Use "." to access `dict` keys *and* properties *and* methods
 
-:   defines *business logic* of your web app
-<!--(called *controller* by Rails and others)-->
+    ```html
+    <h2>Hi {{ user.username }}!</h2>
+    ```
 
-template
+if
+:   \ 
 
-:   is the appearance of your site in HTML
-<!--(called *view* by Rails and others)-->
+    ```html
+    {% if age > 17 %}
+        <p>You may continue.</p>
+    {% else %}
+        <p>Too young.</p>
+    {% endif %}
+    ```
+
+for
+:   \ 
+
+    ```html
+    {% for post in blog_posts %}
+        <h2>{{ post.title }}</h2>
+    {% empty %}
+        <em>No posts found</em>
+    {% endfor %}
+    ```
+
+extends & blocks
+:    Allows template variations: replace "block" placeholder in a `base.html`
+
+    ```html
+    {% extends "base.html" %}
+    {% block main_content %}
+        <p>User: {{ user.name }}<p>
+    {% endblock main_content %}
+    ```
+
+filters
+:   `<p>Hi {{ name|upper }}</p>`{.html}
+
+
+include
+:   `{% include "snippet.html" %}`{.javascript}
 
 
