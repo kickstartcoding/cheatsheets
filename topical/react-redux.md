@@ -172,7 +172,7 @@ $(this.btn).modal();
 const doIncrement = () =>
   ({type: INCREMENT});
 const addTodo = (item) =>
-  ({type: ADD, text: item});
+  ({type: ADD_TODO, text: item});
 ```
 
 **Dispatching** (found in `components/`)
@@ -191,15 +191,15 @@ const initialState = {
 };
 const todo = (state, action) => {
 switch (action.type) {
-  case ADD:
-  return Object.assign({},state,{
-    count: state.count + 1,
-  });
   case INCREMENT:
-  return Object.assign({},state,{
-    todoList: todoList.concat([
-    text: action.text ]),
-  });
+    return Object.assign({},state,{
+      count: state.count + 1,
+    });
+  case ADD_TODO:
+    return Object.assign({},state,{
+      todoList: [...todoList,
+                 action.text]),
+    }); /* etc ... */
 ```
 
 

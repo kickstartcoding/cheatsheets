@@ -1,10 +1,19 @@
 Need to-do before FOSS launch:
 
-* Create Django cheatsheet
 
-* Create react cheat-sheet (includes Redux diagram)
+----
+
+Incomplete:
 
 * Bash CLI and Git cheatsheet
+
+* Create Django cheatsheet
+
+----
+
+Done:
+
+* Create react cheat-sheet (includes Redux diagram)
 
 ----
 
