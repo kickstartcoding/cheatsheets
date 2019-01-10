@@ -100,7 +100,17 @@ Click on one of the following thumbnails to download one of our cheatsheets.
 [![modern-html-css PDF thumbnail](./build/topical/modern-html-css.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/modern-html-css.pdf)
 
 
+### django
+
+[![django PDF thumbnail](./build/topical/django.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/django.pdf)
+
+
 ### cli-bash
 
 [![cli-bash PDF thumbnail](./build/topical/cli-bash.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/cli-bash.pdf)
+
+
+### react-redux
+
+[![react-redux PDF thumbnail](./build/topical/react-redux.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/react-redux.pdf)
 

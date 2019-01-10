@@ -57,6 +57,29 @@ following cheatsheet to use as a reference.
 [![python-for-js-developers PDF thumbnail](./build/topical/python-for-js-developers.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/python-for-js-developers.pdf)
 
 
+### React, Redux, and React Router
+
+Learning React, Redux, and React Router can be tricky. This crams in important
+syntax and examples for common React and Redux coding patterns. Includes a
+Redux diagram, JSX syntax snippets, map and ternary operator examples,
+conditional rendering, action creator and reducer examples, React form events,
+and component syntax examples.
+
+[![react-redux PDF thumbnail](./build/topical/react-redux.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/react-redux.pdf)
+
+
+### Django 
+
+Learning Django? Here are some common patterns of Django, along with a diagram
+showing how the Models-View-Template system fits together.
+
+[![django PDF thumbnail](./build/topical/django.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/django.pdf)
+
+
+## More templates
+
+[Curriculum-based weekly cheatsheets.](./CHEATSHEETS.md)
+
 # Contributing
 
 * **How it's built**: These cheatsheets are written originally in Markdown,
