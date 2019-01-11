@@ -5,13 +5,13 @@ Need to-do before FOSS launch:
 
 Incomplete:
 
-* Bash CLI and Git cheatsheet
-
-* Create Django cheatsheet
+* django cheatsheet
 
 ----
 
 Done:
+
+* Bash CLI and Git cheatsheet
 
 * Create react cheat-sheet (includes Redux diagram)
 

@@ -27,7 +27,9 @@ CSS, including CSS Grid and pseudo-selectors.
 ### CLI: Bash & Git
 
 Learning CLI and Git usage on macOS or Linux? This cheatsheet has the most
-commonly used commands in Bash, Git, and more.
+commonly used commands in Bash and Git. It also contains more advanced
+usage, such as using `grep`, `find`, piping, redirection, job and process
+control, and interacting with the bash history.
 
 [![cli-bash PDF thumbnail](./build/topical/cli-bash.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/cli-bash.pdf)
 
@@ -76,15 +78,15 @@ showing how the Models-View-Template system fits together.
 [![django PDF thumbnail](./build/topical/django.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/django.pdf)
 
 
-## More templates
+## More
 
-[Curriculum-based weekly cheatsheets.](./CHEATSHEETS.md)
+[More cheatsheets, corresponding to weekly Kickstart Coding curriculum.](./CHEATSHEETS.md)
 
 # Contributing
 
 * **How it's built**: These cheatsheets are written originally in Markdown,
   converted into LaTeX using [pandoc](https://pandoc.org/) and a custom
-  [pandoc LaTeX template](./templates/template.text) (very messy), and then
+  [pandoc LaTeX template](./templates/template.tex) (very messy), and then
   generates the PDF.  All this is tied together using the Bash script
   [build.sh](./build.sh).
 
