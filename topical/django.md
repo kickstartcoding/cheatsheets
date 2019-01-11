@@ -25,23 +25,45 @@ urlpatterns = [
 ]
 ```
 
-# `views.py`: Business logic {-}
+
+
+# `forms.py`: Form validation {-}
 
 
 ```python
-from django.shortcuts import render
-def welcome_page(request):
-  return render(request,
-                "hi.html", {})
-def upage(request, uid):
-  u = Users.objects.get(id=uid)
-  context = {"user": u}
-  return render(request, "u.html", context)
+from django import forms
+class NewPersonForm(forms.Form):
+  name = forms.EmailField()
 ```
 
+<!--
+```python
+*Optional*, allow for input validation.
+class BookForm(forms.ModelForm):
+  class Meta: # Auto-generates
+    model = Book # from a model
+    fields = ["blurb", "category"]
+```
+-->
 
 
 \columnbreak
+
+# `python manage.py` work-flow {-}
+
+<!--
+startproject # Scaffold project
+collectstatic # Copy static files
+-->
+```bash
+startapp # Scaffold django "app"
+runserver # Run test server
+shell # Enter Python shell
+dbshell # Enter Database shell
+showmigrations # Migration status
+makemigrations # Gen model changes
+migrate # Apply migrations to DB
+```
 
 
 # `models.py`: DB Schema {-}
@@ -90,13 +112,28 @@ class Book(models.Model):
   # Validators add custom checks
   num_stars = models.IntegerField(
     validators=[MaxValueValidator(5),
-                MinValueValidator(1)])
+            MinValueValidator(1)])
 
-# ManyToMany relationships
+    # ManyToMany relationships
 class ReadingList(models.Model):
   books = models.ManyToManyField(Book)
 ```
 
+
+# `views.py`: Business logic {-}
+
+
+```python
+def welcome_page(request):
+  return render(request,
+                "hi.html", {})
+def upage(request, uid):
+  usr = Users.objects.get(id=uid)
+  return render(request, "u.html", {
+    "user": usr })
+```
+
+<!--
 # Forms {-}
 
 ```python
@@ -113,13 +150,8 @@ class BookForm(forms.ModelForm):
     fields = ['blurb', 'category']
 ```
 
-# Migration work-flow {-}
 
-```bash
-manage.py showmigrations # Check
-manage.py makemigrations # Create
-manage.py migrate # Apply to DB
-```
+-->
 
 \columnbreak
 
