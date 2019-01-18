@@ -43,7 +43,7 @@ mostly work with 2, also.
 
 
 
-### Javascript for Pythonistas
+### JavaScript for Pythonistas
 
 Already know Python, and want to learn JavaScript (ES6+)?  Print up the
 following cheatsheet to use as a reference.
