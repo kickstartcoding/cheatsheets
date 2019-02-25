@@ -106,7 +106,7 @@ Creating a new virtualenv
 :   \ 
 
     ```bash
-    pipenv --python 3.6
+    pipenv --python 3
     ```
 
 

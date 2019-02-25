@@ -8,12 +8,63 @@ cheatsheet: 5
 ![requests and responses](./kickstart-backend/images/request_response.pdf)\ 
 
 
+# Python requests {-}
+
+```python
+import requests
+url = ("https://api.openaq.org"
+    "/v1/measurements"
+    "?location=Oakland")
+response = requests.get(url)
+d = response.json()
+print(d) # See response data
+print(d["results"][0]["value"])
+```
+
+
+# API Terminology {-}
+
+API
+
+:   The interface that software uses to communicate with other computers or
+software. **REST APIs** are the most popular, and use HTTP requests and
+responses to exchange data or perform actions.
+
+API Key / Secret
+
+:   "Username" and "password" for APIs that need it.
+
+
+# HTTP Methods {-}
+
+GET
+
+:   Retrieve information
+
+
+POST
+
+:   Create a new item
+
+
+PUT
+
+:   Update an existing item
+
+
+DELETE
+
+:   Delete an item
+
+
+\columnbreak
+
+
 # Terminology {-}
 
 Protocol
 
-:   An agreed-upon standard or set of "formalities" of how computers should
-talk to each other and exchange data
+:   Agreed-upon "routine" for computers talking to each other
 
 IP address
 
@@ -47,117 +98,7 @@ Method
 caps. The backend gets to decide how to process different HTTP methods
 differently.
 
-\columnbreak
 
-# HTTP Methods {-}
-
-
-GET
-
-:   Fetch information without modifying anything
-
-
-POST
-
-:   Create a new item
-
-
-PUT
-
-:   Update an existing item
-
-
-DELETE
-
-:   Delete an item
-
-
-# Python requests {-}
-
-```python
-import requests
-
-url = "https://api.openaq.org" +
-    "/v1/measurements" +
-    "?location=Oakland"
-resp = requests.get(url)
-d = resp.json()
-print(d["results"][0]["value"])
-```
-
-
-# Django routing {-}
-
-```python
-from django.urls import path
-from django.http import HttpResponse
-
-def hi_world(request):
-    return HttpResponse("""
-        <h1>Hello Django World!</h1>
-    """)
-
-urlpatterns = [
-    path("hello-world/", hi_world),
-]
-```
-
-# API Terminology {-}
-
-API
-
-:   Application programming interface: The interface that software uses to
-communicate with other software. Some APIs are free, others might cost money.
-
-
-REST API
-
-:   The most common type of API, REST APIs are based on HTTP, utilizing the
-different request methods to allow third party software to connect over the
-internet.
-
-
-API Key
-
-:   A unique identifier for a user of an API (like a username).
-
-
-API Secret
-
-:   Some APIs require this, basically a password for an API.
-
-
-
-\columnbreak
-
-# Heroku {-}
-
-```bash
-# Test Procfile locally
-pipenv shell
-heroku local
-
-# Create a new app
-heroku create
-
-# Ensure git is hooked up
-git remote -v
-
-# Deploy to Heroku via git
-git push heroku master
-
-# Check site in browser
-heroku open
-
-# Debug (view remote logs)
-heroku logs
-
-# Inspect environment variables
-heroku config
-
-# SSH into remote Heroku bash
-heroku ps:exec
-```
 
 # Advanced Python {-}
 
@@ -207,7 +148,7 @@ sets
 -->
 
 Variable length arguments
-:   Can provide "catch-alls" for positional and named arguments.
+:   "Catch-alls" for positional or named args.
 
     ```python
     def do_all(*args, **kwargs):
@@ -245,3 +186,94 @@ views.py
 
 :   Contains code for templating and formatting responses to send back.
 -->
+\columnbreak
+
+
+# Django routing {-}
+
+```python
+from django.urls import path
+from django.http import HttpResponse
+
+def hi_world(request):
+    # Simplest view: Just respond
+    # with string, no templating
+    return HttpResponse("Hi world!")
+
+def about_me(request):
+    # Context dictionary: Variables
+    # that go into the template
+    ctx = {
+        "name": "Ash Ketchum",
+    }
+    # render: Do templating with
+    # given context variables
+    return render(
+        request, "about.html", ctx)
+
+# urlpatterns connects URLs to
+# view functions.
+urlpatterns = [
+    path("hello-world/", hi_world),
+    path("about-me/", about_me),
+]
+```
+
+# Heroku {-}
+
+```bash
+heroku create # Create a new app
+git remote -v # Check git remotes
+
+# Launch site via git push, do
+# after every change:
+git push heroku master
+
+heroku open # View your web app
+heroku logs # Debug (view output)
+
+# Lesser used:
+heroku local # Test Procfile
+heroku config # Inspect environment
+heroku ps:exec # Start Heroku bash
+```
+
+
+# Mini-Django Boilerplate {-}
+
+<!--
+-->
+
+minidjango
+
+:    Our boilerplate to get you started on small web apps .
+
+Procfile
+
+:   Tells Heroku how to start.
+
+
+Pipfile
+
+:   Contains PyPI dependencies.
+
+
+
+static/
+
+:   CSS, images, and JS go here.
+
+templates/
+
+:   HTML templates go here.
+
+urls.py
+
+:   Contains "routing": Matches paths (eg urls) to *view functions*.
+
+
+views.py
+
+:   Contains "view functions", which do templating and send back responses
+based on requests.
+
