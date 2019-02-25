@@ -225,10 +225,8 @@ urlpatterns = [
 heroku create # Create a new app
 git remote -v # Check git remotes
 
-# Launch site via git push, do
-# after every change:
+# Launch/update site via git push:
 git push heroku master
-
 heroku open # View your web app
 heroku logs # Debug (view output)
 
