@@ -14,9 +14,9 @@ out the code in a complicated web apps into 3 different categories
 
 ORM
 
-:   *Object Relational Mapper* - the library used by the model to make special
-classes (called *models*) that can be saved and retrieved from the database
-(that is to say, *persisted*). Works by generating SQL.
+:   *Object Relational Mapper* - the type of library that lets us create
+special classes (called *models*) that can be saved and retrieved from the
+database (e.g. SQLite). Writes SQL code, so we don't have to.
 
 
 migration
@@ -37,23 +37,24 @@ MVT
 
 app
 
-:   A single Django-powered *project* can consist of multiple *apps*, where
-each app can have a full vertical "slice" of models, views, and templates.
+:   A single Django-powered *project* can be split up into multiple *apps*.
+Each app can have a full vertical "slice" of models, views, and templates.
 
-# Using Django forms {-}
+# Models, Views, and Forms {-}
 
 
-**models.py**
+**models.py** - Define a "Person" as having a name and email
 
 ```python
-class NewPersonForm(models.Model):
+class Person(models.Model):
 	name = forms.CharField(max_length=64)
 	email = forms.EmailField()
 ```
 
 
 
-**views.py**
+**views.py** - Example code for using a form and a model to gather and validate
+user input.
 
 ```python
 class NewPersonForm(forms.Form):
