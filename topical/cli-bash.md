@@ -305,7 +305,7 @@ Interacting with remotes
 
     ```bash
     # Using wildcard for search by
-    find . -name *.pyc # extension
+    find . -name '*.py' # extension
     find . -name views.py # Exact
     find . -iname iNFo # Any case
     # Find modified in last 7 days
