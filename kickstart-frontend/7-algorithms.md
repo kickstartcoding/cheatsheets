@@ -221,10 +221,11 @@ graph = {
 
 # Terminology {-}
 
-Poyla's 4 Steps
+Polya's 4 Steps
 
-:     **1** Understand the problem **2** Devise a plan **3** Carry it out **4**
-Verify & review
+:     \
+    **1** Understand the problem - **2** Devise a plan - **3** Carry it out -
+    **4** Verify & review
 
 <!--
 Problem
