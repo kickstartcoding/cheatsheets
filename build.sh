@@ -69,7 +69,7 @@ Click on one of the following thumbnails to download one of our cheatsheets.
 fi
 
 
-COHORT="2019-Summer"
+COHORT="Cheatsheet"
 IN="kickstart-backend"
 OUT="build/kickstart-backend"
 pandoc_build name="1-html-css"
