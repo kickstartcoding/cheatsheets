@@ -147,7 +147,7 @@ class App extends Component {
 
     render() {
         // Temporary variables and debugging go here
-        let messageCount = this.chatLog.length;
+        let messageCount = this.state.chatLog.length;
         console.log("render method", messageCount);
 
         // Return the JSX of what you want visible
