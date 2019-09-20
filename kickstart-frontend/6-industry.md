@@ -74,20 +74,7 @@ the process to achieve *"continuous deployment"*
 
 ![server Topology](./kickstart-frontend/images/server_topology.pdf)\ 
 
-
-# Encryption  {-}
-
-
-Key pair
-
-:    A pair of *private* and *public* key files to used to securely connect a
-pair of computers online, used by `git`, `ssh`, and more
-
-
-![security](./kickstart-frontend/images/security.pdf)\ 
-
 # DevOps tools {-}
-
 
 Virtual machine
 
@@ -102,14 +89,34 @@ SSH
 
 Docker
 
-:    Creates *containers* which isolate software and lock-down versions on a
-Linux system (e.g.  anything `apt install`ed on Ubuntu)
+:    Creates *containers*, similar to light-weight VMs, isolating and
+locking-down system dependencies
 
 
 
-Puppet, Chef, Ansible, Salt etc
+Puppet, Chef, Salt
 
-:    Tools used by DevOps for running and configuring many servers
+:    Tools to configure many servers at once
+
+
+# DevOps Key Terms  {-}
+
+Vertical scaling
+
+:    upgrading computers
+
+
+Horizontal scaling
+
+:    more computers
+
+
+Key pair
+
+:    A pair of *private* and *public* key files to used to securely connect a
+pair of computers online, used by `git`, `ssh`, and more
+
+![security](./kickstart-frontend/images/security.pdf)\ 
 
 
 \columnbreak
