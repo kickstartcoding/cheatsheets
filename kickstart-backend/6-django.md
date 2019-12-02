@@ -47,8 +47,8 @@ Each app can have a full vertical "slice" of models, views, and templates.
 
 ```python
 class Person(models.Model):
-	name = forms.CharField(max_length=64)
-	email = forms.EmailField()
+	name = models.CharField(max_length=64)
+	email = models.EmailField()
 ```
 
 
