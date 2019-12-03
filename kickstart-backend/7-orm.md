@@ -66,31 +66,27 @@ class ReadingList(models.Model):
 
 id
 
-:   Automatically incrementing integer included with all Models
+:   Automatically incrementing int, included with all Models
 
 
 queryset
 
-:   Django terminology for the list-like data returned from database
+:   Django terminology for the list-like data returned from database. Can
+be filtered further, or looped over.
 
 
 CRUD
 
 :   Create, Read, Update, Delete - The four main operations of web application
-development
+development.
 
 
 # Migration work-flow {-}
 
 ```bash
-# Generate migrations for recent model changes
-python manage.py makemigrations
-
-# Double check where we're at
-python manage.py showmigrations
-
-# Apply the generated migrations
-python manage.py migrate
+python manage.py makemigrations # Detect changes
+python manage.py showmigrations # Check status
+python manage.py migrate # Apply any new migrations
 ```
 
 # DB Relationships {-}
@@ -120,39 +116,48 @@ a model into two".  *Example:* `Album` with
 
 # Django CRUD Examples {-}
 
-ORM operations like this typically go in your `views.py` to accomplish the
-business logic necessary based on your application goals.
+ORM CRUD operations goes into `views.py`, to code the "business logic".  The
+variables from the READ examples should be included in your templates to allow
+display to user.
 
+<!-- from .models import Book-->
 ```python
-from .models import Book
+##### CREATE
+# Create a new book and save immediately in DB:
+Book.objects.create(
+    title="Great Expectations", num_stars=4)
+# Alternate style: Create book, put into variable...
+book = Book(title="Great Expectations")
+book.num_stars = 4
+book.save() # ...but only save to DB with .save()
 
-### CREATE
-book = Book.objects.create(
-    title="Great Expectations",
-    num_stars=4,
-)
+##### READ
+# Singular: Get 1 (and only 1) book that matches
+book = Book.objects.get(title="Great Expectations")
+print(book.author) # Template: {{ book.author }}
+# Plural: Get all book(s) that match criteria
+f_books = Book.objects.filter(category="fict")
+for b in f_books: # Template: {% for b in f_books %}
+    print(b.author) # Template: {{ b.author }}
+# More complicated plural: All 4+ star, newest first
+new_good_books = (Book.objects   # (parenthesis are
+    .filter(num_stars__gt=3)     # for multi-lines)
+    .order_by("-date"))
 
-### READ
-# Get all fiction books to loop through
-fiction_books = Book.objects.filter(category="fict")
-# Get all 4+ star books, newest first
-new_good_books = (
-    Book.objects.filter(num_stars__gt=3)
-    .order_by("-date")
-)
-
-### UPDATE
+##### UPDATE
 book = Book.objects.get(title="Great Expectations")
 book.num_stars = 5  # Updates a single property
 book.save()         # Saves the change to the DB
-
+# Example of .update() on queryset (plural example):
 nonfict = Book.objects.filter(category="nonfict")
 nonfict.update(num_stars=5)  # Updates all books
+# Example creating a many-to-many association:
+rl = ReadingList.objects.get(title="Must read")
+rl.books.add(book) # No need for ".save()" after add
 
-### DELETE
+##### DELETE
 book = Book.objects.get(title="Great Expectations")
-book.delete()       # Only delete a single book
-bad_books = Book.objects.filter(num_stars__lt=3)
-bad_books.delete()  # Delete every 1 or 2 star book
+book.delete() # .delete() works on a single object...
+Book.objects.filter(num_stars=1).delete() # or many
 ```
 
