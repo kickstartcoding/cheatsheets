@@ -133,7 +133,7 @@ render() {
 ```html
 <div>{
     this.props.data.map((item, index) => (
-      <p onClick={this.performAction(index)}>
+      <p onClick={() => this.doAction(index)}>
         {index}: {item}
       </p>
     ))
