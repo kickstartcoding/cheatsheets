@@ -127,7 +127,7 @@ Modifier
 :   \ 
 
     ```css
-    h1:before {
+    h1::before {
         content: "-";
         color: blue;
     }

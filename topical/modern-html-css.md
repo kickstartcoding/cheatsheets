@@ -1,7 +1,7 @@
 ---
-title: HTML & CSS (2019)
+title: HTML & CSS (2020)
 cheatsheet: HTML and CSS
-topic: Modern HTML (2019)
+topic: Modern HTML (2020)
 headergfx: true
 credits: true
 ...
@@ -116,7 +116,7 @@ Block styling
     display: block;
     box-sizing: border-box;
     background: yellow;
-    border: 2px dotted green;
+    border: 2px solid green;
     border-radius: 10px;
 }
 ```
@@ -181,7 +181,7 @@ Pseudo-elements
 :   (add content)
 
 ```css
-h1:before { content: "-"; }
+h1::before { content: "-"; }
 ```
 
 
