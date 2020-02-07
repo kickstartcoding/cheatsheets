@@ -137,14 +137,14 @@ const initialState = {
 };
 const todo = (state, action) => {
 switch (action.type) {
-  case ADD:
+  case INCREMENT:
   return Object.assign({},state,{
     count: state.count + 1,
   });
-  case INCREMENT:
+  case ADD:
   return Object.assign({},state,{
     todoList: todoList.concat([
-    text: action.text ]),
+    { text: action.text } ]),
   });
 ```
 
