@@ -108,6 +108,17 @@ const divOfParagraphs = (
 );
 ```
 
+# useState hook {-}
+
+```javascript
+// Create a state value that is initially set to 0. The
+// value is stored in `count` and updated with `setCount`
+const [count, setCount] = useState(0)
+
+// Adds one to `count` and then re-renders the component
+setCount(count + 1)
+```
+
 # Full React Example {-}
 
 ```javascript
