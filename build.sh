@@ -40,6 +40,13 @@ $0 --watch topical/python
 fi
 
 
+# Change "--all" to be no filter
+if [ -n "$FILTER" ] && [ $FILTER = "--all" ]; then
+    FILTER=''
+fi
+
+
+
 LINKS_OUT="CHEATSHEETS.md"
 
 function pandoc_build() {
