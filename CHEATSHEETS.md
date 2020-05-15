@@ -85,6 +85,11 @@ Click on one of the following thumbnails to download one of our cheatsheets.
 [![javascript-for-pythonistas PDF thumbnail](./build/topical/javascript-for-pythonistas.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/javascript-for-pythonistas.pdf)
 
 
+### react-hooks-useeffect
+
+[![react-hooks-useeffect PDF thumbnail](./build/topical/react-hooks-useeffect.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/react-hooks-useeffect.pdf)
+
+
 ### python-for-js-developers
 
 [![python-for-js-developers PDF thumbnail](./build/topical/python-for-js-developers.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/python-for-js-developers.pdf)

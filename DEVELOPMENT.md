@@ -72,7 +72,9 @@ For the thumbnailing of the PDFs to work, you'll need to install ImageMagick.
 
 * On various Debian-based systems:
     * `sudo apt-get install imagemagick`
-    * [You may need to change policies (such as on Ubuntu 18.04+) to permit it access to PDFs](https://askubuntu.com/questions/1081895/trouble-with-batch-conversion-of-png-to-pdf-using-convert)
+    * You may need to change policies (such as on Ubuntu 18.04+) to permit it
+      access to PDFs:
+      [`askubuntu.com/questions/1081895/`](https://askubuntu.com/questions/1081895/)
 * On homebrew based systems:
     * `brew install imagemagick`
 

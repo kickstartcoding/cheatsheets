@@ -78,6 +78,15 @@ showing how the Models-View-Template system fits together.
 [![django PDF thumbnail](./build/topical/django.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/django.pdf)
 
 
+### react-hooks-useeffect
+
+Tackling the new React Hook of useEffect? This React hook can do a lot more
+than just replace life-cycle methods. Here are a few common patterns and tricky
+gotchas:
+
+[![react-hooks-useeffect PDF thumbnail](./build/topical/react-hooks-useeffect.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/react-hooks-useeffect.pdf)
+
+
 ## More
 
 [More cheatsheets, corresponding to weekly Kickstart Coding curriculum.](./CHEATSHEETS.md)
