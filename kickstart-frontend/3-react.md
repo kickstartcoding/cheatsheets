@@ -111,47 +111,40 @@ const divOfParagraphs = (
 # Full React Example {-}
 
 ```javascript
-import React, { Component } from "react";
+import { useState, useEffect } from "react";
 
 // CSS & images can be included "magically"
 import "./App.css";
 import sendIcon from "./images/envelope.png";
 
-class App extends Component {
-    // Define starting state
-    state = {
-        message: "",
-        chatLog: []
-    };
+function App() {
+    // Define starting state and corresponding set functions
+    const [message, setMessage] = useState("");
+    const [chatLog, setChatLog] = useState([]);
 
-    // Define methods. Must have for forms.
-    onMessageChange = (ev) => {
+    // Define functions. Must have for forms.
+    function onMessageChange(ev) {
         const value = ev.target.value;
-        this.setState({ // Modify state
-            message: value,
-        });
+        setMessage(value); // Modify state
     }
 
     // Special method called when page loads
     // useful for fetching initial data
-    componentDidMount() {
+    useEffect(() => {
         fetch("http://some.com/api/")
             .then(response => response.json())
             .then(data => {
                 console.log("Data received:", data);
-                this.setState({
-                    chatLog: data.messages,
-                });
+                setChatLog(data.messages);
             });
-    }
+    }, [])
+ 
+    // Temporary variables and debugging go here
+    let messageCount = chatLog.length;
+    console.log("render method", messageCount);
 
-    render() {
-        // Temporary variables and debugging go here
-        let messageCount = this.state.chatLog.length;
-        console.log("render method", messageCount);
-
-        // Return the JSX of what you want visible
-        return (
+    // Return the JSX of what you want visible
+    return (
 ```
 
 ```html
@@ -172,8 +165,7 @@ class App extends Component {
 ```
 
 ```javascript
-        );
-    }
+    );
 }
 ```
 
