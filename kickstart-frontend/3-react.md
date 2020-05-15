@@ -118,7 +118,8 @@ import "./App.css";
 import sendIcon from "./images/envelope.png";
 
 function App() {
-    // Define starting state and corresponding set functions
+    // Define starting state and corresponding 
+    // set functions
     const [message, setMessage] = useState("");
     const [chatLog, setChatLog] = useState([]);
 
@@ -151,12 +152,12 @@ function App() {
             <div className="App">
                 <h1>{messageCount} new messages</h1>
                 {
-                    this.state.chatLog.map(text => (
+                    chatLog.map(text => (
                         <p>Message: {text}</p>
                     ))
                 }
-                <input onChange={this.onMessageChange}
-                    value={this.state.message} />
+                <input onChange={onMessageChange}
+                    value={message} />
                 <button onClick={() => alert("Hi")}>
                     <img src={sendIcon} />
                     Send message
