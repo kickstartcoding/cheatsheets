@@ -1,11 +1,22 @@
 #!/bin/bash
 
-###############
+#
 # Ensure in correct location
-MY_PATH="`dirname \"$0\"`"              # relative
-MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  # absolutized and normalized
+MY_PATH="`dirname \"$0\"`"
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
 cd $MY_PATH
-###############
+
+
+#
+# Detect Pandoc version
+if  [[ $(pandoc --version) == pandoc\ 1* ]] ;
+then
+    echo 'Pandoc version 1 detected'
+    PANDOC_PDF_OPTION='--latex-engine'
+else
+    echo 'Assuming Pandoc version 2'
+    PANDOC_PDF_OPTION='--pdf-engine'
+fi
 
 FILTER="$1"
 
@@ -30,7 +41,7 @@ function pandoc_build() {
         --variable=cohort:$COHORT\
         -t latex\
         --template "$TEMPLATE"\
-        --latex-engine pdflatex\
+        "$PANDOC_PDF_OPTION" pdflatex\
         --toc-depth 1\
         -o "$OUT/$name.pdf"
 
