@@ -30,7 +30,7 @@ function pandoc_build() {
         --variable=cohort:$COHORT\
         -t latex\
         --template "$TEMPLATE"\
-        --latex-engine pdflatex\
+        --pdf-engine pdflatex\
         --toc-depth 1\
         -o "$OUT/$name.pdf"
 

@@ -108,62 +108,67 @@ const divOfParagraphs = (
 );
 ```
 
+# useState hook {-}
+
+```javascript
+// Create a state value that is initially set to 0. The
+// value is stored in `count` and updated with `setCount`
+const [count, setCount] = useState(0)
+
+// Adds one to `count` and then re-renders the component
+setCount(count + 1)
+```
+
 # Full React Example {-}
 
 ```javascript
-import React, { Component } from "react";
+import { useState, useEffect } from "react";
 
 // CSS & images can be included "magically"
 import "./App.css";
 import sendIcon from "./images/envelope.png";
 
-class App extends Component {
-    // Define starting state
-    state = {
-        message: "",
-        chatLog: []
-    };
+function App() {
+    // Define starting state and corresponding 
+    // set functions
+    const [message, setMessage] = useState("");
+    const [chatLog, setChatLog] = useState([]);
 
-    // Define methods. Must have for forms.
-    onMessageChange = (ev) => {
+    // Define functions. Must have for forms.
+    function onMessageChange(ev) {
         const value = ev.target.value;
-        this.setState({ // Modify state
-            message: value,
-        });
+        setMessage(value); // Modify state
     }
 
-    // Special method called when page loads
+    // Special function called when page loads
     // useful for fetching initial data
-    componentDidMount() {
+    useEffect(() => {
         fetch("http://some.com/api/")
             .then(response => response.json())
             .then(data => {
                 console.log("Data received:", data);
-                this.setState({
-                    chatLog: data.messages,
-                });
+                setChatLog(data.messages);
             });
-    }
+    }, [])
+ 
+    // Temporary variables and debugging go here
+    let messageCount = chatLog.length;
+    console.log("rendering!", messageCount);
 
-    render() {
-        // Temporary variables and debugging go here
-        let messageCount = this.state.chatLog.length;
-        console.log("render method", messageCount);
-
-        // Return the JSX of what you want visible
-        return (
+    // Return the JSX of what you want visible
+    return (
 ```
 
 ```html
             <div className="App">
                 <h1>{messageCount} new messages</h1>
                 {
-                    this.state.chatLog.map(text => (
+                    chatLog.map(text => (
                         <p>Message: {text}</p>
                     ))
                 }
-                <input onChange={this.onMessageChange}
-                    value={this.state.message} />
+                <input onChange={onMessageChange}
+                    value={message} />
                 <button onClick={() => alert("Hi")}>
                     <img src={sendIcon} />
                     Send message
@@ -172,8 +177,7 @@ class App extends Component {
 ```
 
 ```javascript
-        );
-    }
+    );
 }
 ```
 

@@ -10,19 +10,19 @@ cheatsheet: 4
 `src/components/Button/Button.js`
 
 ```html
-import React, { Component } from "react";
+import React from "react";
 import "./Button.css";
-class Button extends Component {
-  render() {
+function Button(props) {
+  return (
     <button className="Button"
-      onClick={this.props.onClick}>
-      {this.props.children}
+      onClick={props.onClick}>
+      {props.children}
     </button>
-  }
-}
+  )
+};
 
-// If no state, can be re-written as
-// "functional component" short-hand
+// Alternatively, you can use
+// "arrow function" short-hand
 const Button = (props) => (
   <button className="Button"
     onClick={props.onClick}>
@@ -45,10 +45,11 @@ props
 :   Short for "properties", props are *immutable* and represent the data
 passed down to components from the parent of a component as attributes
 
-lifecycle methods
+hooks
 
-:   Methods that have special names in React which are triggered at certain
-points in a React component's lifecycle
+:   Hooks are functions that let you “hook into” React state and lifecycle 
+features from inside components. React provides a few built-in Hooks like 
+`useState` and `useEffect`.
 
 function / stateless component
 
@@ -84,26 +85,20 @@ const {name, age} = info;
 # Using components {-}
 
 ```javascript
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Button from "./components/Button/Button.js";
-class App extends Component {
-  state = {
-    count: 0,
+function App() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
   }
 
-  increment() {
-    this.setState({
-      count: this.state.count + 1,
-    });
-  }
-
-  render() {
-    return (
-      <Button onClick={this.increment}>
-        Click me {this.state.count}
-      </Button>
-    )
-  }
+  return (
+    <Button onClick={increment}>
+      Click me {count}
+    </Button>
+  )
 }
 
 ```
@@ -114,17 +109,15 @@ class App extends Component {
 **Conditional rendering**
 
 ```javascript
-render() {
-  if (!this.props.text) {
-    return (
-      <p><em>No text found...</em></p>
-    );
-  }
-
+if (!props.text) {
   return (
-    /*... full render method here ... */
+    <p><em>No text found...</em></p>
   );
 }
+
+return (
+  /*... full normal render JSX here ... */
+);
 ```
 
 
@@ -132,11 +125,11 @@ render() {
 
 ```html
 <div>{
-    this.props.data.map((item, index) => (
-      <p onClick={() => this.doAction(index)}>
-        {index}: {item}
-      </p>
-    ))
+  props.data.map((item, index) => (
+    <p onClick={doAction(index)}>
+      {index}: {item}
+    </p>
+  ))
 }</div>
 ```
 
@@ -145,8 +138,8 @@ render() {
 
 ```html
 <div>{
-    this.props.image ? (
-      <img src={this.props.image} />
+    props.image ? (
+      <img src={props.image} />
     ) : <em>No image provided.</em>
 }</div>
 ```

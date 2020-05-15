@@ -44,6 +44,15 @@ produces awesome results, its slightly cumbersome to install.
     * Either install all of MacTex (which will be equivalent to texlive), or
       install BasicTex 
 
+### Example Mac session
+
+```bash
+brew install pandoc
+brew cask install basictex # takes a few minutes
+bash --login # Make sure you're in a bash shell for the rest of the commands
+sudo tlmgr install collection-fontsrecommended titlesec framed mdframed zref needspace
+./build-mac.sh
+```
 
 #### Installation entr
 
