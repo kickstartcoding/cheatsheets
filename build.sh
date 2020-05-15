@@ -11,14 +11,34 @@ cd $MY_PATH
 # Detect Pandoc version
 if  [[ $(pandoc --version) == pandoc\ 1* ]] ;
 then
-    echo 'Pandoc version 1 detected'
+    #echo 'Pandoc version 1 detected'
     PANDOC_PDF_OPTION='--latex-engine'
 else
-    echo 'Assuming Pandoc version 2'
+    #echo 'Assuming Pandoc version 2'
     PANDOC_PDF_OPTION='--pdf-engine'
 fi
 
 FILTER="$1"
+if [ -z "$FILTER" ]; then
+    echo "USAGE
+
+To re-build all cheatsheets:
+
+$0 --all
+
+To re-build only certain ones, or ones that match a search criteria:
+
+$0 python
+$0 ./kickstart-backend/5-http.md
+
+To use entr to watch for changes and rebuild a particular cheatsheet (supply
+path, but omit extension):
+
+$0 --watch topical/python
+"
+    exit 0
+fi
+
 
 LINKS_OUT="CHEATSHEETS.md"
 
