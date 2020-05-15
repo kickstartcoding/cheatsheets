@@ -140,7 +140,7 @@ function App() {
         setMessage(value); // Modify state
     }
 
-    // Special method called when page loads
+    // Special function called when page loads
     // useful for fetching initial data
     useEffect(() => {
         fetch("http://some.com/api/")
@@ -153,7 +153,7 @@ function App() {
  
     // Temporary variables and debugging go here
     let messageCount = chatLog.length;
-    console.log("render method", messageCount);
+    console.log("rendering!", messageCount);
 
     // Return the JSX of what you want visible
     return (
