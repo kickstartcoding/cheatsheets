@@ -129,8 +129,7 @@ import "./App.css";
 import sendIcon from "./images/envelope.png";
 
 function App() {
-    // Define starting state and corresponding 
-    // set functions
+    // Define starting state and set functions
     const [message, setMessage] = useState("");
     const [chatLog, setChatLog] = useState([]);
 
@@ -140,8 +139,8 @@ function App() {
         setMessage(value); // Modify state
     }
 
-    // Special function called when page loads
-    // useful for fetching initial data
+    // Called when the page loads to fetch data
+    // See useEffect cheatsheet for details
     useEffect(() => {
         fetch("http://some.com/api/")
             .then(response => response.json())
@@ -180,7 +179,6 @@ function App() {
     );
 }
 ```
-
 
 
 
