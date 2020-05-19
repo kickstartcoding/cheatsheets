@@ -42,16 +42,18 @@ produces awesome results, its slightly cumbersome to install.
       all of those
 * On macOS:
     * Either install all of MacTex (which will be equivalent to texlive), or
-      install BasicTex 
+      install BasicTex (see below)
 
-### Example Mac session
+### macOS - installing via BasicTex / TexLive
+
+Installation using `brew` for BasicTex and `tlmgr` for the required TexLive
+packages.
 
 ```bash
 brew install pandoc
 brew cask install basictex # takes a few minutes
 bash --login # Make sure you're in a bash shell for the rest of the commands
 sudo tlmgr install collection-fontsrecommended titlesec framed mdframed zref needspace
-./build-mac.sh
 ```
 
 #### Installation entr
@@ -70,17 +72,19 @@ For the thumbnailing of the PDFs to work, you'll need to install ImageMagick.
 
 * On various Debian-based systems:
     * `sudo apt-get install imagemagick`
-    * [You may need to change policies (such as on Ubuntu 18.04+) to permit it access to PDFs](https://askubuntu.com/questions/1081895/trouble-with-batch-conversion-of-png-to-pdf-using-convert)
+    * You may need to change policies (such as on Ubuntu 18.04+) to permit it
+      access to PDFs:
+      [`askubuntu.com/questions/1081895/`](https://askubuntu.com/questions/1081895/)
 * On homebrew based systems:
     * `brew install imagemagick`
 
 
-## Usage
+## `build.sh` Usage
 
 To re-build all cheatsheets:
 
 ```
-./build.sh
+./build.sh --all
 ```
 
 To re-build only certain ones, or ones that match a search criteria:
@@ -91,7 +95,8 @@ To re-build only certain ones, or ones that match a search criteria:
 ```
 
 
-To use `entr` to watch for changes and rebuild a particular cheatsheet:
+To use `entr` to watch for changes and rebuild a particular cheatsheet (supply
+path, but omit extension):
 
 ```
 ./build.sh --watch topical/python

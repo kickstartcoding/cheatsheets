@@ -1,14 +1,17 @@
 ---
 title: The useEffect Hook
+cheatsheet: useEffect
+topic: Using useEffect with React JS (15.8 and later)
 twocolumns: true
-cheatsheet: 3.5
+headergfx: true
+credits: true
 ...
 
 # Terminology {-}
 
 useEffect
 
-:   A function that adds the ability to perform side-effects from a function 
+:   A function that adds the ability to perform side-effects from a function
 component.
 
 mount

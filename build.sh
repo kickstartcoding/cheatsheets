@@ -1,13 +1,51 @@
 #!/bin/bash
 
-###############
+#
 # Ensure in correct location
-MY_PATH="`dirname \"$0\"`"              # relative
-MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  # absolutized and normalized
+MY_PATH="`dirname \"$0\"`"
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
 cd $MY_PATH
-###############
+
+
+#
+# Detect Pandoc version
+if  [[ $(pandoc --version) == pandoc\ 1* ]] ;
+then
+    #echo 'Pandoc version 1 detected'
+    PANDOC_PDF_OPTION='--latex-engine'
+else
+    #echo 'Assuming Pandoc version 2'
+    PANDOC_PDF_OPTION='--pdf-engine'
+fi
 
 FILTER="$1"
+if [ -z "$FILTER" ]; then
+    echo "USAGE
+
+To re-build all cheatsheets:
+
+$0 --all
+
+To re-build only certain ones, or ones that match a search criteria:
+
+$0 python
+$0 ./kickstart-backend/5-http.md
+
+To use entr to watch for changes and rebuild a particular cheatsheet (supply
+path, but omit extension):
+
+$0 --watch topical/python
+"
+    exit 0
+fi
+
+
+# Change "--all" to be no filter
+if [ -n "$FILTER" ] && [ $FILTER = "--all" ]; then
+    FILTER=''
+fi
+
+
 
 LINKS_OUT="CHEATSHEETS.md"
 
@@ -30,7 +68,7 @@ function pandoc_build() {
         --variable=cohort:$COHORT\
         -t latex\
         --template "$TEMPLATE"\
-        --latex-engine pdflatex\
+        "$PANDOC_PDF_OPTION" pdflatex\
         --toc-depth 1\
         -o "$OUT/$name.pdf"
 
@@ -87,7 +125,6 @@ OUT="build/kickstart-frontend"
 pandoc_build name="1-css"
 pandoc_build name="2-javascript"
 pandoc_build name="3-react"
-pandoc_build name="3.5-useeffect"
 pandoc_build name="4-components"
 pandoc_build name="5-mern"
 pandoc_build name="6-industry"
@@ -104,4 +141,5 @@ pandoc_build name="modern-html-css"
 pandoc_build name="django"
 pandoc_build name="cli-bash"
 pandoc_build name="react-redux"
+pandoc_build name="react-hooks-useeffect"
 
