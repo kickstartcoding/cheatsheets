@@ -1,7 +1,7 @@
 ---
 title: The useEffect Hook
 cheatsheet: useEffect
-topic: Using useEffect with React JS (15.8 and later)
+topic: Using useEffect with React JS (16.8 and later)
 twocolumns: true
 headergfx: true
 credits: true
