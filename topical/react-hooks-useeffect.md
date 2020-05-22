@@ -1,7 +1,7 @@
 ---
 title: The useEffect Hook
 cheatsheet: useEffect
-topic: Using useEffect with React JS (15.8 and later)
+topic: Using useEffect with React JS (16.8 and later)
 twocolumns: true
 headergfx: true
 credits: true
@@ -85,35 +85,46 @@ useEffect(() => {
 # useEffect Examples (with return) {-}
 
 ```javascript
-function showAlert(){
-  alert("You just scrolled!")
-}
-// Sets up a very annoying listener to display an 
-// alert whenever the user scrolls. Then removes that 
-// listener. This will run the add and remove listener
-// functions for every single render call.
+// Let's say we have a chat app with chatrooms.
+// This code sets up a listener to display chat
+// messages we receive. With this code, we will
+// setup and then remove the listener on *every* render
 useEffect(() => {
-  document.addEventListener("scroll", showAlert);
+  listenForMessagesFrom(chatroomId, addToMessageList);
 
   return () => {
-    document.removeEventListener("scroll", showAlert);
-  }
-})
+    stopListeningForMessagesFrom(chatroomId);
+  };
+});
 ```
 
 ```javascript
-// Same as above, but because we're passing an empty 
-// array as the second argument, we only add the 
-// listener on the first render, and only remove it 
-// right before unmounting the component. 
-// Much more effeicient!
+// Same as above, except we're passing an empty array as
+// the second argument to useEffect, so we only add the 
+// listener on the very first render, and only remove it 
+// right before unmounting. Much more efficient!
 useEffect(() => {
-  document.addEventListener("scroll", showAlert);
+  listenForMessagesFrom(chatroomId, addToMessageList);
 
   return () => {
-    document.removeEventListener("scroll", showAlert);
-  }
-}, [])
+    stopListeningForMessagesFrom(chatroomId);
+  };
+}, []); // we added the empty array on this line
+```
+
+```javascript
+// What if we change chatrooms, though? We don't want 
+// to display messages from our old chatroom after 
+// changing to a new one. So let's set it up to ALSO
+// rerun the listener cleanup and setup code 
+// **whenever chatroomId changes**
+useEffect(() => {
+  listenForMessagesFrom(chatroomId, addToMessageList);
+
+  return () => {
+    stopListeningForMessagesFrom(chatroomId);
+  };
+}, [chatroomId]); // we added chatroomId on this line
 ```
 
 # Common Gotcha {-}
@@ -121,34 +132,27 @@ useEffect(() => {
 ```javascript
 // THE GOTCHA: If you're not careful, calling a setter 
 // function inside useEffect can cause an infinite loop
-const [count, setCount] = useState(0)
+const [count, setCount] = useState(0);
 
 useEffect(() => {
-  fetch("https://some.site/where/we/saved/the/count")
-    .then(response => response.json())
-    .then(savedCount => {
-      // Calling setCount re-renders the component
-      // which means useEffect will get called 
-      // again, which means setCount will get 
-      // called again, aaaaand INFINITE LOOP
-      setCount(savedCount)
-    })
-})
+  const savedCount = localStorage.get("savedCount");
+  // Calling setCount re-renders the component
+  // which means useEffect will get called 
+  // again, which means setCount will get 
+  // called again, aaaaand INFINITE LOOP
+  setCount(savedCount);
+});
 ```
 
 ```javascript
 // THE FIX: use that second useEffect argument to 
 // prevent unnecessary useEffect calls
-const [count, setCount] = useState(0)
+const [count, setCount] = useState(0);
 
 useEffect(() => {
-  fetch("https://some.site/where/we/saved/the/count")
-    .then(response => response.json())
-    .then(savedCount => {
-      setCount(savedCount)
-    })
+  const savedCount = localStorage.get("savedCount");
+  setCount(savedCount);
 // This little array argument right here is the fix!
-// Now that fetch will only get called after the 
-// very first render
-}, [])
+// Now this code will only run after the first render
+}, []);
 ```
