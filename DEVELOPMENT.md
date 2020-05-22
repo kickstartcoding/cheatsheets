@@ -52,8 +52,16 @@ packages.
 ```bash
 brew install pandoc
 brew cask install basictex # takes a few minutes
-bash --login # Make sure you're in a bash shell for the rest of the commands
 sudo tlmgr install collection-fontsrecommended titlesec framed mdframed zref needspace
+```
+
+### macOS - non-bash users
+
+If you use another shell (i.e. fish), you may have to use bash to use `tlmg`,
+make sure you're in a bash shell for the commands.
+
+```bash
+bash --login
 ```
 
 #### Installation entr
