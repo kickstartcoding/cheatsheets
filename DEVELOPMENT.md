@@ -57,8 +57,8 @@ sudo tlmgr install collection-fontsrecommended titlesec framed mdframed zref nee
 
 ### macOS - non-bash users
 
-If you use another shell (i.e. fish), you may have to use bash to use `tlmg`,
-make sure you're in a bash shell for the commands.
+If you use another shell (e.g. `fish`, `zsh`), you may have to use bash to use
+`tlmgr` and run pandoc. Make sure you're in a bash shell for the commands:
 
 ```bash
 bash --login
