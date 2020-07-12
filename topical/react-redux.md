@@ -11,7 +11,7 @@ credits: true
 # React Example Code {-}
 
 ```javascript
-import React, { Component }
+import { useState, useEffect }
     from "react";
 import "./App.css";
 import sendIcon from
@@ -19,61 +19,63 @@ import sendIcon from
 import Button from
    "./components/Button";
 
-class App extends Component {
+function App() {
   // Define starting state
-  state = {
-    message: "",
-    chatLog: []
-  };
+  const [message, setMessage] = 
+    useState("");
+  const [chatLog, setChatLog] = 
+    useState([]);
 
   // Form elements need state
-  // modifying methods
-  onMsgChange (ev) {
-    const {value} = ev.target;
-    this.setState({
-      message: value,
-    });
+  // modifying functions
+  function onMsgChange (ev) {
+    setMessage(ev.target.value);
   }
 
-  // Lifecycle methods
-  // First rendered to screen
-  componentDidMount() {}
-  // After props or state change
-  componentDidUpdate() {}
-  // Can prevent DOM update
-  shouldComponentUpdate() {}
+  function sendMsg (ev) {
+    setChatLog(
+      [message, ...chatLog]);
+  }
 
-  render() {
-    // Special method: Return JSX
-    // that is to be rendered
-    let {chatLog} = this.state;
-    let count = chatLog.length;
+  // When you need something to 
+  // happen after first render
+  useEffect(() => {
+    alert("First render!")
+  });
 
-    return (
+  // When you need something to 
+  // happen after every render
+  useEffect(() => {
+    alert("Just rendered!")
+  }, []);
+
+  // When you need something to 
+  // happen after every time
+  // the chatLog state changes
+  useEffect(() => {
+    alert("chatLog changed!")
+  }, [chatLog]);
+
+  const count = chatLog.length;
+
+  return (
 ```
 
 ```html
   <div className="App">
     <h1>{count} messages</h1>
-    {this.state.chatLog.map(
-      text => (
-        <p>{text}</p>
-    ))}
-    {/* Needs ".bind(this)"
-        to keep context */}
+    {chatLog.map(text => {
+      return <p>{text}</p>
+    })}
     <input
-      value={this.state.message}
-      onChange={this.onMsgChange
-                .bind(this)} />
-    <Button onClick={
-        this.sendMsg.bind(this)}>
+      value={message}
+      onChange={onMsgChange} />
+    <Button onClick={sendMsg}>
       <img src={sendIcon} />
       Send message
     </Button>
   </div>
-    );
-  }
-}
+);}}
 ```
 
 
@@ -82,23 +84,15 @@ class App extends Component {
 
 
 ```html
-// Class based component
-class Button extends Component {
-  render() {
-    <button className="Button"
-      onClick={this.props.onClick}>
-      {this.props.children}
-    </button>
-  }
+function Button(props) {
+    return (
+      <button className="Button"
+        onClick={props.onClick}>
+        {props.children}
+      </button>
+    )
 }
 
-// Functional component
-const Button = (props) => (
-  <button className="Button"
-    onClick={props.onClick}>
-    {props.children}
-  </button>
-);
 export default Button;
 ```
 
@@ -113,12 +107,12 @@ export default Button;
 **Conditional rendering:**
 
 ```javascript
-render() {
-  if (!this.props.text) {
+  if (!props.text) {
     return "Empty...";
   }
-  // full render here ... 
-}
+
+  return (
+    // full render here ... 
 ```
 
 
@@ -127,8 +121,7 @@ render() {
 ```html
 <div>{
   data.map((item, i) => (
-    <p onClick={this.pClicked
-                .bind(this, i)}>
+    <p onClick={pClicked}>
       {i}: {item}
     </p>
   ))
@@ -140,9 +133,11 @@ render() {
 
 ```html
 <div>{
-  this.props.image ? (
-    <img src={this.props.image} />
-  ) : <em>No image provided.</em>
+  props.image ? (
+    <img src={props.image} />
+  ) : (
+    <em>No image provided.</em>
+  )
 }</div>
 ```
 
@@ -150,11 +145,16 @@ render() {
 **Using *ref* to incorporate legacy JS:**
 
 ```html
-// Somewhere in JSX (e.g. render)
-<div ref={el => { this.btn = el; }}>
-  Click me!</div>
-// Somewhere in JS (e.g. a method)
-$(this.btn).modal();
+// At the top of the component
+const [el, setEl] = useState(null);
+
+// In a useEffect call
+useEffect(() => {
+  $(el).somePlugin();
+}, [el]);
+
+// Somewhere in JSX
+<div ref={setEl}>Click me!</div>
 ```
 
 
@@ -178,8 +178,8 @@ const addTodo = (item) =>
 **Dispatching** (found in `components/`)
 ```javascript
 let action =
-  addTodo(this.state.text);
-this.props.dispatch(action);
+  addTodo(text);
+dispatch(action);
 ```
 
 
@@ -192,11 +192,11 @@ const initialState = {
 const todo = (state, action) => {
 switch (action.type) {
   case INCREMENT:
-    return Object.assign({},state,{
+    return {...state, ...{
       count: state.count + 1,
     });
   case ADD_TODO:
-    return Object.assign({},state,{
+    return {...state, ...{
       todoList: [...todoList,
                  action.text]),
     }); /* etc ... */
