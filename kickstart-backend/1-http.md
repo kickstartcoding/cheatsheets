@@ -1,6 +1,6 @@
 ---
 title: Python HTTP
-cheatsheet: 5
+cheatsheet: 1.1-1.3
 ...
 
 # Requests & Responses {-}

@@ -245,7 +245,7 @@ $if(cheatsheet)$
 $if(topic)$
 \chead{$topic$}
 $else$
-\chead{Lessons $cheatsheet$.1 - $cheatsheet$.3 Reference}
+\chead{Lessons $cheatsheet$ Reference}
 $endif$
 $endif$
 
