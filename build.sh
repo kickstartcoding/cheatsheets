@@ -108,16 +108,20 @@ fi
 
 
 COHORT="Cheatsheet"
-IN="kickstart-backend"
-OUT="build/kickstart-backend"
+IN="kickstart-fundamentals"
+OUT="build/kickstart-fundamentals"
 pandoc_build name="1-html-css"
 pandoc_build name="2-bash-git"
 pandoc_build name="3-python"
 pandoc_build name="4-modules-oop"
-pandoc_build name="5-http"
-pandoc_build name="6-django"
-pandoc_build name="7-orm"
-pandoc_build name="8-postgres"
+
+
+IN="kickstart-backend"
+OUT="build/kickstart-backend"
+pandoc_build name="1-http"
+pandoc_build name="2-django"
+pandoc_build name="3-orm"
+pandoc_build name="4-postgres"
 
 
 IN="kickstart-frontend"
@@ -127,8 +131,12 @@ pandoc_build name="2-javascript"
 pandoc_build name="3-react"
 pandoc_build name="4-components"
 pandoc_build name="5-mern"
-pandoc_build name="6-industry"
-pandoc_build name="7-algorithms"
+
+
+IN="kickstart-career"
+OUT="build/kickstart-career"
+pandoc_build name="1-industry"
+pandoc_build name="2-algorithms"
 
 
 IN="topical"
