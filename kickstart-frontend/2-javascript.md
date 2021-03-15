@@ -1,6 +1,6 @@
 ---
 title: ES6 for Pythonistas
-cheatsheet: 2
+cheatsheet: 2.1 - 2.3
 ...
 
 # Python {-}

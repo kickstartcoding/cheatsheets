@@ -70,14 +70,14 @@ Click on one of the following thumbnails to download one of our cheatsheets.
 [![5-mern PDF thumbnail](./build/kickstart-frontend/5-mern.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/kickstart-frontend/5-mern.pdf)
 
 
-### 1-industry
+### 1-algorithms
 
-[![1-industry PDF thumbnail](./build/kickstart-career/1-industry.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/kickstart-career/1-industry.pdf)
+[![1-algorithms PDF thumbnail](./build/kickstart-career/1-algorithms.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/kickstart-career/1-algorithms.pdf)
 
 
-### 2-algorithms
+### 2-industry
 
-[![2-algorithms PDF thumbnail](./build/kickstart-career/2-algorithms.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/kickstart-career/2-algorithms.pdf)
+[![2-industry PDF thumbnail](./build/kickstart-career/2-industry.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/kickstart-career/2-industry.pdf)
 
 
 ### javascript-for-pythonistas

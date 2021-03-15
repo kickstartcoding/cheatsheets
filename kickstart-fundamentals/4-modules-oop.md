@@ -1,6 +1,6 @@
 ---
 title: OOP, Modules, and Templates
-cheatsheet: 4
+cheatsheet: 4.1 - 4.3
 ...
 
 

@@ -1,6 +1,6 @@
 ---
 title: Components
-cheatsheet: 4
+cheatsheet: 4.1 - 4.4
 ...
 
 <!-- twocolumns: true -->

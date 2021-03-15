@@ -1,6 +1,6 @@
 ---
 title: HTML & CSS
-cheatsheet: 1
+cheatsheet: 1.1 - 1.3
 ...
 # Common HTML Tags {-}
 

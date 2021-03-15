@@ -1,7 +1,7 @@
 ---
 title: Node & React
 twocolumns: true
-cheatsheet: 3
+cheatsheet: 3.1 - 3.3
 ...
 
 

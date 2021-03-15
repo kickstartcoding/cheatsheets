@@ -1,6 +1,6 @@
 ---
 title: Router, Redux, MERN
-cheatsheet: 5
+cheatsheet: 5.1 - 5.4
 ...
 
 

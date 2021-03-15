@@ -1,6 +1,6 @@
 ---
 title: Algorithms
-cheatsheet: 7
+cheatsheet: 1.1 - 1.3
 ...
 
 

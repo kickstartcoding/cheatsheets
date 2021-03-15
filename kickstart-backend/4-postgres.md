@@ -1,6 +1,6 @@
 ---
 title: Postgres SQL
-cheatsheet: 8
+cheatsheet: 4.1 - 4.2
 twocolumns: true
 ...
 

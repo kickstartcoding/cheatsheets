@@ -1,6 +1,6 @@
 ---
 title: Python Control Flow
-cheatsheet: 3
+cheatsheet: 3.1 - 3.3
 ...
 
 # Types {-}

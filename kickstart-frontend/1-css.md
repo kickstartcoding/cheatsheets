@@ -1,6 +1,6 @@
 ---
 title: Advanced CSS
-cheatsheet: 1
+cheatsheet: 1.1 - 1.3
 ...
 
 

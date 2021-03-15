@@ -1,6 +1,6 @@
 ---
 title: Django ORM
-cheatsheet: 7
+cheatsheet: 3.1 - 3.3
 twocolumns: true
 ...
 

@@ -135,8 +135,8 @@ pandoc_build name="5-mern"
 
 IN="kickstart-career"
 OUT="build/kickstart-career"
-pandoc_build name="1-industry"
-pandoc_build name="2-algorithms"
+pandoc_build name="1-algorithms"
+pandoc_build name="2-industry"
 
 
 IN="topical"

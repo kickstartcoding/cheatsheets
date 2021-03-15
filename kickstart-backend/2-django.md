@@ -1,7 +1,7 @@
 ---
 title: Django and MVC
 twocolumns: true
-cheatsheet: 6
+cheatsheet: 2.1 - 2.3
 ...
 
 

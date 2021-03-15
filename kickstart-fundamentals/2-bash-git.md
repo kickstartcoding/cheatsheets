@@ -1,6 +1,6 @@
 ---
 title: Bash & Git & Python I/O
-cheatsheet: 2
+cheatsheet: 2.1 - 2.3
 ...
 
 # Bash {-}

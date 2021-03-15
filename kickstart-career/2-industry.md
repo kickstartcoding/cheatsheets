@@ -1,6 +1,6 @@
 ---
-title: Industry Week
-cheatsheet: 6
+title: Industry
+cheatsheet: 2.3
 ...
 
 
