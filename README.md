@@ -17,10 +17,10 @@ great when printed. Consider printing to hang up near your computer as you code
 or learn a new programming language!
 
 
-### Modern HTML/CSS (2020)
+### Modern HTML/CSS (2021)
 
-A cheat-sheet containing just the most commonly used stuff in modern HTML &
-CSS, including CSS Grid and pseudo-selectors.
+A cheat-sheet containing the most commonly used HTML tags and CSS selectors, and key terms in modern HTML5 &
+CSS3, including CSS Grid and pseudo-selectors.
 
 [![modern-html-css PDF thumbnail](./build/topical/modern-html-css.thumb.jpg)](https://github.com/kickstartcoding/cheatsheets/raw/master/build/topical/modern-html-css.pdf)
 
